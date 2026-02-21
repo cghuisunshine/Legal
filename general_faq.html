@@ -1,0 +1,2237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>General FAQ Practice Q&A</title>
+  <style>
+    :root {
+      --bg0: #fbfaf6;
+      --bg1: #f2efe8;
+      --paper: #ffffff;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --line: rgba(17, 24, 39, 0.12);
+      --soft: rgba(255, 255, 255, 0.7);
+      --accent: #0f766e; /* teal */
+      --accent2: #9a3412; /* rust */
+      --ok: #065f46;
+      --bad: #b91c1c;
+      --shadow: 0 16px 46px rgba(17, 24, 39, 0.12);
+      --radius: 16px;
+
+      --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+      --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+      --ring: 0 0 0 4px rgba(15, 118, 110, 0.16);
+      --ring2: 0 0 0 4px rgba(154, 52, 18, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: var(--font-serif);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background:
+        radial-gradient(1200px 700px at 18% 12%, rgba(15, 118, 110, 0.12), transparent 55%),
+        radial-gradient(900px 600px at 80% 26%, rgba(154, 52, 18, 0.10), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 22px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 980px;
+      background: linear-gradient(180deg, var(--paper), rgba(255, 255, 255, 0.92));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      padding: 22px 24px 30px;
+      position: relative;
+      overflow: clip;
+    }
+
+    .container:before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background:
+        radial-gradient(900px 260px at 12% 0%, rgba(15, 118, 110, 0.07), transparent 58%),
+        radial-gradient(880px 260px at 88% 0%, rgba(154, 52, 18, 0.05), transparent 62%);
+      pointer-events: none;
+    }
+
+    .container > * { position: relative; }
+
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .header-copy {
+      min-width: 240px;
+      flex: 1;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.9rem;
+      letter-spacing: 0.01em;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin: 7px 0 0;
+      color: rgba(17, 24, 39, 0.64);
+      font-size: 0.98rem;
+      line-height: 1.38;
+      max-width: 70ch;
+    }
+
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .pill {
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(17, 24, 39, 0.14);
+      background: rgba(255, 255, 255, 0.72);
+      color: rgba(17, 24, 39, 0.74);
+      white-space: nowrap;
+      backdrop-filter: blur(6px);
+    }
+
+    .pill.accent {
+      border-color: rgba(15, 118, 110, 0.22);
+      background: rgba(15, 118, 110, 0.08);
+      color: rgba(15, 118, 110, 0.94);
+    }
+
+    details.settings {
+      margin: 12px 0 16px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(17, 24, 39, 0.10);
+      background: rgba(255, 255, 255, 0.64);
+      backdrop-filter: blur(8px);
+      font-size: 0.95rem;
+    }
+
+    details.settings summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: rgba(17, 24, 39, 0.86);
+      font-family: var(--font-sans);
+      letter-spacing: 0.01em;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    details.settings summary::-webkit-details-marker { display: none; }
+
+    details.settings summary:after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid rgba(17, 24, 39, 0.45);
+      border-bottom: 2px solid rgba(17, 24, 39, 0.45);
+      transform: rotate(45deg);
+      transition: transform 160ms ease;
+      margin-left: auto;
+      flex: 0 0 auto;
+    }
+
+    details.settings[open] summary:after {
+      transform: rotate(225deg);
+    }
+
+    .settings-row {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .settings-row.top {
+      align-items: flex-start;
+    }
+
+    .settings-row label {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: rgba(17, 24, 39, 0.68);
+    }
+
+    .grow {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      min-width: 260px;
+      padding: 9px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(17, 24, 39, 0.18);
+      font-family: var(--font-mono);
+      font-size: 0.92rem;
+      background: #fff;
+      box-shadow: 0 1px 0 rgba(17, 24, 39, 0.05);
+      transition: border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    input[type="file"] {
+      width: 100%;
+      max-width: 520px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px dashed rgba(17, 24, 39, 0.22);
+      background: rgba(255, 255, 255, 0.75);
+      font-family: var(--font-mono);
+      font-size: 0.92rem;
+    }
+
+    select {
+      padding: 9px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(17, 24, 39, 0.18);
+      font-family: var(--font-mono);
+      font-size: 0.92rem;
+      background: rgba(255, 255, 255, 0.92);
+      color: rgba(17, 24, 39, 0.90);
+      box-shadow: 0 1px 0 rgba(17, 24, 39, 0.05);
+      max-width: 280px;
+      min-width: 180px;
+    }
+
+    .settings-hint {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: rgba(17, 24, 39, 0.66);
+      line-height: 1.38;
+    }
+
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.92em;
+      background: rgba(15, 118, 110, 0.08);
+      border: 1px solid rgba(15, 118, 110, 0.18);
+      border-radius: 8px;
+      padding: 1px 6px;
+    }
+
+    .stats-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      margin: 10px 0 18px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.62));
+      border: 1px solid rgba(17, 24, 39, 0.10);
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      white-space: nowrap;
+      font-family: var(--font-sans);
+    }
+
+    .stat-label { color: rgba(17, 24, 39, 0.56); }
+    .stat-value { font-weight: 900; color: rgba(17, 24, 39, 0.88); }
+
+    .question-card {
+      border-radius: 18px;
+      border: 1px solid rgba(17, 24, 39, 0.12);
+      padding: 18px 20px 16px;
+      margin-bottom: 14px;
+      background: rgba(255, 255, 255, 0.84);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 220ms ease-out;
+    }
+
+    .question-card:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(600px 120px at 20% 0%, rgba(15, 118, 110, 0.10), transparent 55%),
+        radial-gradient(520px 140px at 85% 15%, rgba(154, 52, 18, 0.08), transparent 60%);
+      pointer-events: none;
+    }
+
+    .question-card > * { position: relative; }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .question-index {
+      font-size: 0.88rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(17, 24, 39, 0.72);
+      font-family: var(--font-sans);
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 118, 110, 0.22);
+      background: rgba(15, 118, 110, 0.08);
+      color: rgba(15, 118, 110, 0.92);
+      font-family: var(--font-sans);
+      white-space: nowrap;
+    }
+
+    .question-text {
+      font-size: 1.12rem;
+      line-height: 1.55;
+      margin: 6px 0 0;
+    }
+
+    .input-card, .answer-card {
+      border-radius: 18px;
+      border: 1px solid rgba(17, 24, 39, 0.12);
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .input-card { margin-bottom: 12px; }
+    .answer-card {
+      margin-bottom: 18px;
+      display: none;
+      animation: reveal 220ms ease-out;
+    }
+
+    .input-label, .answer-label {
+      font-size: 0.84rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(17, 24, 39, 0.60);
+      margin-bottom: 6px;
+      font-family: var(--font-sans);
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 84px;
+      resize: vertical;
+      padding: 10px 11px;
+      border-radius: 12px;
+      border: 1px solid rgba(17, 24, 39, 0.18);
+      font-family: var(--font-sans);
+      font-size: 0.98rem;
+      line-height: 1.4;
+      background: #fff;
+      box-shadow: 0 1px 0 rgba(17, 24, 39, 0.05);
+      transition: border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    textarea.paste {
+      min-height: 130px;
+      font-family: var(--font-mono);
+      font-size: 0.92rem;
+    }
+
+    .btn-row {
+      margin-top: 8px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-row.tight { gap: 10px; }
+
+    .feedback {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      font-family: var(--font-sans);
+    }
+
+    .feedback.ok { color: var(--ok); }
+    .feedback.bad { color: var(--bad); }
+
+    .answer-text {
+      font-size: 1.02rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      font-family: var(--font-sans);
+    }
+
+    .review-panel {
+      display: none;
+      margin-top: 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(17, 24, 39, 0.12);
+      background: rgba(255, 255, 255, 0.88);
+      overflow: hidden;
+    }
+
+    .review-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      background:
+        radial-gradient(520px 120px at 20% 0%, rgba(15, 118, 110, 0.08), transparent 60%),
+        radial-gradient(520px 120px at 85% 0%, rgba(154, 52, 18, 0.06), transparent 60%),
+        rgba(255, 255, 255, 0.78);
+      border-bottom: 1px solid rgba(17, 24, 39, 0.10);
+    }
+
+    .review-title {
+      font-family: var(--font-sans);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+
+    .review-sub {
+      margin-top: 2px;
+      font-family: var(--font-sans);
+      color: rgba(17, 24, 39, 0.62);
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    .review-list {
+      padding: 12px 14px 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .review-item {
+      border-radius: 14px;
+      border: 1px solid rgba(17, 24, 39, 0.10);
+      background: rgba(255, 255, 255, 0.85);
+      padding: 10px 12px;
+    }
+
+    .review-item .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      font-family: var(--font-sans);
+      margin-bottom: 6px;
+    }
+
+    .review-item .idx {
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(17, 24, 39, 0.70);
+      font-size: 0.78rem;
+    }
+
+    .review-item .verdict {
+      font-family: var(--font-sans);
+      font-weight: 900;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .review-item .verdict.ok { color: var(--ok); }
+    .review-item .verdict.bad { color: var(--bad); }
+    .review-item .verdict.unknown { color: rgba(17, 24, 39, 0.62); }
+    .review-item .verdict.na { color: rgba(17, 24, 39, 0.52); }
+    .review-item .q {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+
+    .review-item .explain {
+      font-family: var(--font-sans);
+      color: rgba(17, 24, 39, 0.68);
+      font-size: 0.95rem;
+      line-height: 1.35;
+      white-space: pre-wrap;
+    }
+
+    .review-item .answer {
+      margin-top: 8px;
+      display: grid;
+      gap: 6px;
+      border-radius: 12px;
+      border: 1px dashed rgba(17, 24, 39, 0.18);
+      background: rgba(17, 24, 39, 0.03);
+      padding: 8px 10px;
+    }
+
+    .review-item .answer .k {
+      font-family: var(--font-sans);
+      font-weight: 900;
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(17, 24, 39, 0.62);
+    }
+
+    .review-item .answer .v {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      white-space: pre-wrap;
+    }
+
+    .actions-wrap {
+      position: sticky;
+      bottom: 12px;
+      margin-top: 10px;
+      padding-top: 8px;
+    }
+
+    .actions-wrap:before {
+      content: "";
+      position: absolute;
+      inset: -14px -14px -14px -14px;
+      background: linear-gradient(
+        180deg,
+        rgba(251, 250, 246, 0),
+        rgba(251, 250, 246, 0.70) 24%,
+        rgba(251, 250, 246, 0.92)
+      );
+      pointer-events: none;
+      filter: blur(0.3px);
+    }
+
+    .actions-wrap > * { position: relative; }
+
+    .controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .nav-group, .util-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .util-group { margin-left: auto; }
+
+    .knowledge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-bottom: 8px;
+    }
+
+    button {
+      border-radius: 999px;
+      border: none;
+      padding: 9px 16px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      font-family: var(--font-sans);
+      transition: transform 120ms ease, filter 160ms ease, box-shadow 160ms ease;
+      box-shadow: 0 1px 0 rgba(17, 24, 39, 0.08);
+    }
+
+    button:hover { filter: brightness(0.98); box-shadow: 0 10px 22px rgba(17, 24, 39, 0.10); }
+    button:active { transform: translateY(1px); }
+
+    button.primary {
+      background: linear-gradient(180deg, rgba(15, 118, 110, 0.98), rgba(13, 148, 136, 0.98));
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(15, 118, 110, 0.22);
+    }
+
+    button.secondary {
+      background: rgba(17, 24, 39, 0.08);
+      color: rgba(17, 24, 39, 0.90);
+    }
+
+    button.outline {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(17, 24, 39, 0.18);
+      color: rgba(17, 24, 39, 0.90);
+    }
+
+    button:disabled {
+      opacity: 0.55;
+      cursor: default;
+      box-shadow: none;
+      transform: none;
+    }
+
+    .spacer { flex: 1; }
+
+    :is(button, input, textarea, summary):focus-visible {
+      outline: none;
+      box-shadow: var(--ring);
+      border-color: rgba(15, 118, 110, 0.50);
+    }
+
+    #btn-toggle-answer:focus-visible {
+      box-shadow: var(--ring2);
+      border-color: rgba(154, 52, 18, 0.50);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 1ms !important; transition-duration: 1ms !important; }
+    }
+
+    @media (max-width: 760px) {
+      .header-row { flex-direction: column; align-items: flex-start; }
+      .header-meta { justify-content: flex-start; }
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 16px; }
+      .container { padding: 18px 16px 26px; }
+
+      /* Keep controls on the right for easier thumb reach. */
+      .controls-row { flex-direction: column; align-items: flex-end; }
+      .util-group { margin-left: 0; }
+      .knowledge-row { justify-content: stretch; }
+      button { justify-content: center; }
+
+      /* Arrow-only nav buttons still need a tap target. */
+      #btn-prev, #btn-next { min-width: 56px; padding-left: 14px; padding-right: 14px; }
+
+      /* Let feedback drop under the buttons when tight. */
+      #feedback { flex: 0 0 100%; }
+
+      input[type="text"] { min-width: 0; }
+      .actions-wrap { bottom: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-row">
+      <div class="header-copy">
+        <h1>General FAQ Practice</h1>
+        <p class="subtitle">
+          Load a file of question/answer pairs (JSON or simple text), type your answer, check it, then (optionally) reveal a model answer.
+          Answers are optional; if a model answer is missing, AI grading can still be used.
+        </p>
+      </div>
+      <div class="header-meta" aria-label="Session info">
+        <span class="pill accent" title="Questions in current set">Set: <span id="pill-total">1</span></span>
+        <span class="pill" title="Drafts saved">Answered: <span id="pill-answered">0</span> / <span id="pill-total-2">1</span></span>
+      </div>
+    </div>
+
+    <details class="settings" open>
+      <summary>Data + AI grading (optional)</summary>
+
+      <div class="settings-row">
+        <label for="faq-json">FAQ file</label>
+        <input id="faq-json" type="file" accept="application/json,.json,text/plain,.txt" />
+        <button class="secondary" id="btn-reload-default" type="button">Load default</button>
+      </div>
+
+      <div class="settings-row">
+        <label for="faq-url">FAQ URL</label>
+        <input id="faq-url" type="text" placeholder="https://example.com/faq.json" />
+        <select id="faq-url-pick" aria-label="Pick a FAQ file from this page folder"></select>
+        <button class="secondary" id="btn-load-url" type="button">Load URL</button>
+        <button class="secondary" id="btn-clear-url" type="button">Clear</button>
+      </div>
+
+      <div class="settings-row top">
+        <label for="faq-paste">Paste</label>
+        <div class="grow">
+          <textarea id="faq-paste" class="paste" placeholder="Paste JSON, or plain text blocks separated by an empty line..."></textarea>
+          <div class="btn-row">
+            <button class="secondary" id="btn-load-paste" type="button">Load pasted</button>
+            <button class="secondary" id="btn-clear-paste" type="button">Clear</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-row">
+        <label for="grade-api-url">Grade API URL</label>
+        <input id="grade-api-url" type="text" placeholder="https://example.com/grade" />
+        <button class="secondary" id="btn-test-api" type="button">Test</button>
+        <span id="api-status" class="feedback"></span>
+      </div>
+
+      <div class="settings-hint">
+        Supported formats:
+        <br />
+        JSON:
+        <code>[{"q":"...","a":"..."}]</code>,
+        <code>[{"question":"...","answer":"..."}]</code>,
+        or <code>{"pairs":[...]}</code>.
+        <br />
+        Plain text (blocks separated by empty line):
+        <code>Question line\nAnswer line (optional)\n\nNext question...</code>
+        <br />
+        If an answer is omitted, the page hides the model answer and relies on AI grading.
+      </div>
+    </details>
+
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-label">Question:</span>
+        <span class="stat-value" id="stat-index">1 / 1</span>
+      </div>
+    </div>
+
+    <div class="question-card" id="question-card">
+      <div class="question-header">
+        <div class="question-index" id="question-label">Question 1</div>
+        <div class="tag" id="question-tag">Short Answer</div>
+      </div>
+      <div class="question-text" id="question-text"></div>
+    </div>
+
+    <div class="input-card">
+      <div class="input-label">Your answer</div>
+      <textarea id="user-answer" placeholder="Type your answer here before checking..."></textarea>
+      <div class="btn-row tight">
+        <button class="secondary" id="btn-check" type="button">Check my answer</button>
+        <span id="feedback" class="feedback"></span>
+      </div>
+    </div>
+
+    <div class="answer-card" id="answer-card">
+      <div class="answer-label">Model Answer</div>
+      <div class="answer-text" id="answer-text"></div>
+    </div>
+
+    <div class="review-panel" id="review-panel" aria-live="polite">
+      <div class="review-head">
+        <div>
+          <div class="review-title">Review: Check All</div>
+          <div class="review-sub" id="review-sub">Run "Check All" to review your answers and see the correct answer for every question.</div>
+        </div>
+        <button class="outline" id="btn-close-review" type="button">Close</button>
+      </div>
+      <div class="review-list" id="review-list"></div>
+    </div>
+
+    <div class="actions-wrap">
+      <div class="controls-row">
+        <div class="nav-group">
+          <button class="secondary" id="btn-prev" type="button">← Previous</button>
+          <button class="primary" id="btn-toggle-answer" type="button">Show Answer</button>
+          <button class="secondary" id="btn-next" type="button">Next →</button>
+        </div>
+        <div class="util-group">
+          <button class="secondary" id="btn-random" type="button">Shuffle</button>
+          <button class="secondary" id="btn-check-all" type="button" title="Check all questions (shows correct answers)">Check All</button>
+          <button class="secondary" id="btn-reset" type="button" title="Clear all saved answers">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const DEFAULT_GRADE_API_URL = "https://lakesideart.gochatus.org/grade-service/grade";
+    const LS_FAQ_KEY = "generalFaq.questions.v1";
+
+    const DEFAULT_QUESTIONS = [
+      {
+        q: "What is an FAQ?",
+        a: "An FAQ (Frequently Asked Questions) is a list of common questions and clear answers about a topic, product, or service."
+      },
+      {
+        q: "Why do FAQs help learners?",
+        a: "They reduce confusion by addressing common misunderstandings and giving a quick reference for key ideas."
+      },
+      {
+        q: "Explain this concept in your own words:",
+        tag: "No Model Answer"
+      }
+    ];
+
+    function sanitizeQuestions(list) {
+      if (!Array.isArray(list)) return [];
+      const out = [];
+      for (const item of list) {
+        if (!item || typeof item !== "object") continue;
+        const q = String(item.q || "").trim();
+        const a = typeof item.a === "string" ? item.a : String(item.a || "");
+        const tag = String(item.tag || "").trim();
+        if (!q) continue;
+        out.push({ q, a: String(a || ""), tag });
+      }
+      return out;
+    }
+
+    function saveQuestionsToLocalStorage(list) {
+      try {
+        const payload = { v: 1, saved_at: new Date().toISOString(), questions: sanitizeQuestions(list) };
+        localStorage.setItem(LS_FAQ_KEY, JSON.stringify(payload));
+      } catch {
+        // ignore
+      }
+    }
+
+    function loadQuestionsFromLocalStorage() {
+      try {
+        const raw = localStorage.getItem(LS_FAQ_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        const list = sanitizeQuestions(parsed && parsed.questions);
+        return list.length ? list : null;
+      } catch {
+        return null;
+      }
+    }
+
+    function answersStorageKey() {
+      return LS_FAQ_KEY + ".answers.v1";
+    }
+
+    function saveAnswersToLocalStorage() {
+      try {
+        localStorage.setItem(answersStorageKey(), JSON.stringify({ v: 1, answers: answersByIndex }));
+      } catch {
+        // ignore
+      }
+    }
+
+    function loadAnswersFromLocalStorage() {
+      try {
+        const raw = localStorage.getItem(answersStorageKey());
+        if (!raw) return {};
+        const parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed !== "object") return {};
+        return (parsed.answers && typeof parsed.answers === "object") ? parsed.answers : {};
+      } catch {
+        return {};
+      }
+    }
+
+    function generatedAnswersStorageKey() {
+      return LS_FAQ_KEY + ".generatedAnswers.v1";
+    }
+
+    function saveGeneratedAnswersToLocalStorage() {
+      try {
+        localStorage.setItem(generatedAnswersStorageKey(), JSON.stringify({ v: 1, answers: generatedAnswersByIndex }));
+      } catch {
+        // ignore
+      }
+    }
+
+    function loadGeneratedAnswersFromLocalStorage() {
+      try {
+        const raw = localStorage.getItem(generatedAnswersStorageKey());
+        if (!raw) return {};
+        const parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed !== "object") return {};
+        return (parsed.answers && typeof parsed.answers === "object") ? parsed.answers : {};
+      } catch {
+        return {};
+      }
+    }
+
+    let questions = loadQuestionsFromLocalStorage() || DEFAULT_QUESTIONS.slice();
+    let currentIndex = 0;
+
+    // per-question drafts (not the same as "Known/Review" stats)
+    // { [index:number]: { answer: string, updated_at: string } }
+    let answersByIndex = {};
+
+    // Cached "Show Answer" results for questions without model answers.
+    // { [index:number]: { answer: string, updated_at: string } }
+    let generatedAnswersByIndex = {};
+
+    const questionCardEl = document.getElementById("question-card");
+    const questionTextEl = document.getElementById("question-text");
+    const answerTextEl = document.getElementById("answer-text");
+    const answerCardEl = document.getElementById("answer-card");
+    const questionLabelEl = document.getElementById("question-label");
+    const questionTagEl = document.getElementById("question-tag");
+
+    const statIndexEl = document.getElementById("stat-index");
+
+    const pillTotalEl = document.getElementById("pill-total");
+    const pillTotal2El = document.getElementById("pill-total-2");
+    const pillAnsweredEl = document.getElementById("pill-answered");
+
+    const btnCheckAll = document.getElementById("btn-check-all");
+    const btnReset = document.getElementById("btn-reset");
+    const reviewPanelEl = document.getElementById("review-panel");
+    const reviewListEl = document.getElementById("review-list");
+    const reviewSubEl = document.getElementById("review-sub");
+    const btnCloseReview = document.getElementById("btn-close-review");
+
+    const btnToggleAnswer = document.getElementById("btn-toggle-answer");
+    const btnPrev = document.getElementById("btn-prev");
+    const btnNext = document.getElementById("btn-next");
+    const btnRandom = document.getElementById("btn-random");
+    const btnCheck = document.getElementById("btn-check");
+
+    const userAnswerEl = document.getElementById("user-answer");
+    const feedbackEl = document.getElementById("feedback");
+
+    const mobileMq = window.matchMedia("(max-width: 640px)");
+    const controlsRowEl = btnPrev ? btnPrev.parentElement : null;
+    const inputBtnRowEl = document.querySelector(".input-card .btn-row.tight");
+
+    function applyResponsiveControls() {
+      const isMobile = !!(mobileMq && mobileMq.matches);
+
+      if (btnPrev) {
+        btnPrev.textContent = isMobile ? "←" : "← Previous";
+        btnPrev.setAttribute("aria-label", "Previous question");
+        btnPrev.setAttribute("title", "Previous question");
+      }
+
+      if (btnNext) {
+        btnNext.textContent = isMobile ? "→" : "Next →";
+        btnNext.setAttribute("aria-label", "Next question");
+        btnNext.setAttribute("title", "Next question");
+      }
+
+      if (!btnToggleAnswer) return;
+
+      if (isMobile) {
+        if (inputBtnRowEl) {
+          if (feedbackEl && feedbackEl.parentElement === inputBtnRowEl) {
+            inputBtnRowEl.insertBefore(btnToggleAnswer, feedbackEl);
+          } else {
+            inputBtnRowEl.appendChild(btnToggleAnswer);
+          }
+        }
+      } else {
+        if (controlsRowEl && btnNext && btnNext.parentElement === controlsRowEl) {
+          controlsRowEl.insertBefore(btnToggleAnswer, btnNext);
+        }
+      }
+    }
+
+    if (mobileMq && typeof mobileMq.addEventListener === "function") {
+      mobileMq.addEventListener("change", applyResponsiveControls);
+    } else if (mobileMq && typeof mobileMq.addListener === "function") {
+      mobileMq.addListener(applyResponsiveControls);
+    }
+
+    applyResponsiveControls();
+
+    const gradeApiUrlEl = document.getElementById("grade-api-url");
+    const btnTestApi = document.getElementById("btn-test-api");
+    const apiStatusEl = document.getElementById("api-status");
+
+    const faqJsonEl = document.getElementById("faq-json");
+    const btnReloadDefault = document.getElementById("btn-reload-default");
+    const faqUrlEl = document.getElementById("faq-url");
+    const faqUrlPickEl = document.getElementById("faq-url-pick");
+    const btnLoadUrl = document.getElementById("btn-load-url");
+    const btnClearUrl = document.getElementById("btn-clear-url");
+    const faqPasteEl = document.getElementById("faq-paste");
+    const btnLoadPaste = document.getElementById("btn-load-paste");
+    const btnClearPaste = document.getElementById("btn-clear-paste");
+
+    function normalizeText(str) {
+      return String(str || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, " ")
+        .split(/\s+/)
+        .filter(Boolean);
+    }
+
+    function similarityScore(userText, targetText) {
+      const uWords = normalizeText(userText);
+      const tWords = normalizeText(targetText);
+      if (uWords.length === 0 || tWords.length === 0) return 0;
+
+      const uSet = new Set(uWords);
+      const tSet = new Set(tWords);
+      let intersection = 0;
+      tSet.forEach(w => { if (uSet.has(w)) intersection++; });
+      const union = uSet.size + tSet.size - intersection;
+      return union === 0 ? 0 : intersection / union;
+    }
+
+    function localOverlapCheck(userText, correctText) {
+      if (!correctText) {
+        return { verdict: "unknown", explanation: "No model answer provided; enable AI grading to validate." };
+      }
+
+      const score = similarityScore(userText, correctText);
+      const percent = Math.round(score * 100);
+      if (percent >= 70) return { verdict: "correct", explanation: `Overlap about ${percent}% with the model answer.` };
+      if (percent >= 40) return { verdict: "wrong", explanation: `Partial overlap (${percent}%). Compare with the model answer and refine.` };
+      return { verdict: "wrong", explanation: `Low overlap (~${percent}%). Compare with the model answer and try again.` };
+    }
+
+    function setFeedback(text, kind) {
+      feedbackEl.textContent = text || "";
+      feedbackEl.className = "feedback" + (kind ? " " + kind : "");
+    }
+
+    function setApiStatus(text, kind) {
+      apiStatusEl.textContent = text || "";
+      apiStatusEl.className = "feedback" + (kind ? " " + kind : "");
+    }
+
+    function getGradeApiUrl() {
+      const url = (gradeApiUrlEl.value || "").trim();
+      return url || null;
+    }
+
+    function saveGradeApiUrl() {
+      const url = (gradeApiUrlEl.value || "").trim();
+      localStorage.setItem("gradeApiUrl", url);
+    }
+
+    async function fetchJsonWithTimeout(url, options, timeoutMs) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), timeoutMs);
+      try {
+        const resp = await fetch(url, { ...options, signal: controller.signal });
+        const text = await resp.text().catch(() => "");
+        let data = null;
+        try { data = text ? JSON.parse(text) : null; } catch { data = null; }
+        return { ok: resp.ok, status: resp.status, data, text };
+      } catch (err) {
+        if (err && err.name === "AbortError") return { ok: false, status: 0, data: null, text: "", aborted: true };
+        throw err;
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    function extractFirstGradeResult(data) {
+      if (!data) return null;
+      if (Array.isArray(data.results) && data.results[0]) return data.results[0];
+      if (data.result && Array.isArray(data.result.results) && data.result.results[0]) return data.result.results[0];
+      if (data.model_result && Array.isArray(data.model_result.results) && data.model_result.results[0]) return data.model_result.results[0];
+      return null;
+    }
+
+    function extractGradeResults(data) {
+      if (!data) return null;
+      if (Array.isArray(data.results)) return data.results;
+      if (data.result && Array.isArray(data.result.results)) return data.result.results;
+      if (data.model_result && Array.isArray(data.model_result.results)) return data.model_result.results;
+      return null;
+    }
+
+    function deriveHealthUrl(gradeUrl) {
+      try {
+        const u = new URL(gradeUrl);
+        u.search = "";
+        u.hash = "";
+        if (u.pathname.endsWith("/grade")) {
+          u.pathname = u.pathname.replace(/\/grade$/, "/health");
+        } else {
+          u.pathname = u.pathname.replace(/\/+$/, "") + "/health";
+        }
+        return u.toString();
+      } catch {
+        return null;
+      }
+    }
+
+    async function testApi() {
+      const gradeUrl = getGradeApiUrl();
+      if (!gradeUrl) {
+        setApiStatus("Set a URL first.", "bad");
+        return;
+      }
+
+      setApiStatus("Testing...");
+      try {
+        const healthUrl = deriveHealthUrl(gradeUrl);
+        if (!healthUrl) {
+          setApiStatus("Invalid URL.", "bad");
+          return;
+        }
+        const { ok, status, data } = await fetchJsonWithTimeout(healthUrl, { method: "GET" }, 4000);
+        if (!ok) {
+          setApiStatus(`Health check failed (${status}).`, "bad");
+          return;
+        }
+        const looksHealthy =
+          !data ||
+          data.ok === true ||
+          data.status === "ok" ||
+          data.healthy === true ||
+          data.health === "ok";
+        setApiStatus(looksHealthy ? "Backend OK." : "Backend responded.", looksHealthy ? "ok" : "bad");
+      } catch {
+        setApiStatus("Could not reach backend (CORS/URL/offline).", "bad");
+      }
+    }
+
+    function countAnswered() {
+      // Only count answers that correspond to the currently loaded question set.
+      // This avoids stale localStorage entries showing up as "Answered".
+      let n = 0;
+      for (let idx = 0; idx < questions.length; idx++) {
+        const v = answersByIndex[String(idx)];
+        if (v && typeof v.answer === "string" && v.answer.trim()) n++;
+      }
+      return n;
+    }
+
+    function updateStats() {
+      if (pillTotalEl) pillTotalEl.textContent = questions.length;
+      if (pillTotal2El) pillTotal2El.textContent = questions.length;
+      if (pillAnsweredEl) pillAnsweredEl.textContent = countAnswered();
+    }
+
+    function currentQuestion() {
+      return questions[currentIndex] || null;
+    }
+
+    function hasModelAnswer(qObj) {
+      return Boolean(qObj && typeof qObj.a === "string" && qObj.a.trim());
+    }
+
+    function getQaApiUrl() {
+      const gradeUrl = getGradeApiUrl();
+      if (!gradeUrl) return null;
+      try {
+        const u = new URL(gradeUrl);
+        u.search = "";
+        u.hash = "";
+        u.pathname = u.pathname.replace(/\/grade$/, "/qa");
+        if (!u.pathname.endsWith("/qa")) {
+          u.pathname = u.pathname.replace(/\/+$/, "") + "/qa";
+        }
+        return u.toString();
+      } catch {
+        return null;
+      }
+    }
+
+    function extractQaPairs(data) {
+      if (!data) return null;
+      if (Array.isArray(data.pairs)) return data.pairs;
+      if (Array.isArray(data.results)) return data.results;
+      if (Array.isArray(data.items)) return data.items;
+      if (Array.isArray(data)) return data;
+      return null;
+    }
+
+    function normalizeQaPair(p) {
+      if (!p || typeof p !== "object") return null;
+      const question = String(p.question ?? p.q ?? "").trim();
+      const answer = String(p.answer ?? p.a ?? "").trim();
+      if (!question && !answer) return null;
+      return { question, answer };
+    }
+
+    async function fetchGeneratedAnswerForQuestion(questionText) {
+      const qaUrl = getQaApiUrl();
+      if (!qaUrl) throw new Error("no_qa_url");
+
+      const q = String(questionText || "").trim();
+      if (!q) throw new Error("empty_question");
+
+      const payload = { questions: [q] };
+      const aiTimeoutMs = 60000;
+
+      const { ok, status, data, text, aborted } = await fetchJsonWithTimeout(
+        qaUrl,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        },
+        aiTimeoutMs
+      );
+
+      if (aborted) throw new Error(`timeout_after_${Math.round(aiTimeoutMs / 1000)}s`);
+
+      const pairs = extractQaPairs(data);
+      const firstRaw = Array.isArray(pairs) && pairs.length ? pairs[0] : null;
+      const first = normalizeQaPair(firstRaw);
+      if (!ok || !first || !first.answer) {
+        const reason = (data && data.error) ? data.error : `bad_response_${status}`;
+        const detail = text ? ` (${text.slice(0, 160)})` : "";
+        throw new Error(reason + detail);
+      }
+
+      return first.answer;
+    }
+
+    async function fetchGeneratedAnswerForCurrent() {
+      const qObj = currentQuestion();
+      if (!qObj) throw new Error("no_question");
+      return fetchGeneratedAnswerForQuestion(String(qObj.q || "").trim());
+    }
+
+    async function getCorrectAnswerTextForIndex(idx) {
+      const qObj = questions[idx];
+      if (!qObj) return "";
+
+      const model = (typeof qObj.a === "string" ? qObj.a : "").trim();
+      if (model) return model;
+
+      const cached = generatedAnswersByIndex[String(idx)];
+      const cachedText = cached && typeof cached.answer === "string" ? cached.answer.trim() : "";
+      if (cachedText) return cachedText;
+
+      // No model answer. If /qa is configured, generate one (and cache it).
+      try {
+        const generated = await fetchGeneratedAnswerForQuestion(String(qObj.q || "").trim());
+        const out = String(generated || "").trim();
+        if (out) {
+          generatedAnswersByIndex[String(idx)] = { answer: out, updated_at: new Date().toISOString() };
+          saveGeneratedAnswersToLocalStorage();
+        }
+        return out;
+      } catch {
+        return "";
+      }
+    }
+
+    function renderQuestion() {
+      const qObj = currentQuestion();
+      if (!qObj) {
+        questionTextEl.textContent = "No questions loaded.";
+        answerTextEl.textContent = "";
+        questionLabelEl.textContent = "Question";
+        questionTagEl.textContent = "";
+        statIndexEl.textContent = "0 / 0";
+        btnPrev.disabled = true;
+        btnNext.disabled = true;
+        btnToggleAnswer.disabled = true;
+        btnCheck.disabled = true;
+        if (btnCheckAll) btnCheckAll.disabled = true;
+        return;
+      }
+
+      questionTextEl.textContent = qObj.q;
+      answerTextEl.textContent = qObj.a || "";
+      questionLabelEl.textContent = "Question " + (currentIndex + 1);
+      statIndexEl.textContent = (currentIndex + 1) + " / " + questions.length;
+      if (pillTotalEl) pillTotalEl.textContent = questions.length;
+      if (pillTotal2El) pillTotal2El.textContent = questions.length;
+      questionTagEl.textContent = qObj.tag || (hasModelAnswer(qObj) ? "Short Answer" : "No Model Answer");
+
+      answerCardEl.style.display = "none";
+      btnToggleAnswer.textContent = "Show Answer";
+      btnToggleAnswer.disabled = false;
+
+      const saved = answersByIndex[String(currentIndex)];
+      userAnswerEl.value = saved && typeof saved.answer === "string" ? saved.answer : "";
+      setFeedback("", "");
+
+      btnPrev.disabled = currentIndex === 0;
+      btnNext.disabled = currentIndex === questions.length - 1;
+      btnCheck.disabled = false;
+      // Allow "Check All" even with zero answered (it will mark blanks as not answered).
+      if (btnCheckAll) btnCheckAll.disabled = false;
+      updateStats();
+
+      // small re-trigger animation
+      questionCardEl.style.animation = "none";
+      void questionCardEl.offsetHeight;
+      questionCardEl.style.animation = "fadeInUp 220ms ease-out";
+    }
+
+    async function toggleAnswer() {
+      const qObj = currentQuestion();
+      if (!qObj) return;
+
+      const showing = answerCardEl.style.display !== "none";
+      if (showing) {
+        answerCardEl.style.display = "none";
+        btnToggleAnswer.textContent = "Show Answer";
+        return;
+      }
+
+      btnToggleAnswer.disabled = true;
+      setFeedback("", "");
+
+      try {
+        if (hasModelAnswer(qObj)) {
+          answerTextEl.textContent = qObj.a || "";
+        } else {
+          const cached = generatedAnswersByIndex[String(currentIndex)];
+          const cachedText = cached && typeof cached.answer === "string" ? cached.answer.trim() : "";
+
+          if (cachedText) {
+            answerTextEl.textContent = cachedText;
+          } else {
+            setFeedback("Generating an answer...", "");
+            const generated = await fetchGeneratedAnswerForCurrent();
+            answerTextEl.textContent = generated;
+            generatedAnswersByIndex[String(currentIndex)] = { answer: generated, updated_at: new Date().toISOString() };
+            saveGeneratedAnswersToLocalStorage();
+            setFeedback("", "");
+          }
+        }
+
+        answerCardEl.style.display = "block";
+        btnToggleAnswer.textContent = "Hide Answer";
+      } catch (err) {
+        console.warn("QA fetch failed:", err);
+        setFeedback("Could not fetch an answer. Set the Grade API URL to your backend and ensure /qa is reachable.", "bad");
+      } finally {
+        btnToggleAnswer.disabled = false;
+      }
+    }
+
+    function randomQuestion() {
+      if (questions.length <= 1) return;
+      let newIndex = currentIndex;
+      while (newIndex === currentIndex) {
+        newIndex = Math.floor(Math.random() * questions.length);
+      }
+      currentIndex = newIndex;
+      renderQuestion();
+    }
+
+    function resetSession() {
+      currentIndex = 0;
+      updateStats();
+      renderQuestion();
+    }
+
+    function clearAllAnswers() {
+      answersByIndex = {};
+      generatedAnswersByIndex = {};
+      saveAnswersToLocalStorage();
+      saveGeneratedAnswersToLocalStorage();
+      updateStats();
+    }
+
+    function resetAllAnswersUi() {
+      clearAllAnswers();
+      setFeedback("Cleared all answers.", "ok");
+      closeReviewPanel();
+      renderQuestion();
+    }
+
+    function coerceQuestions(raw) {
+      const unwrap = (v) => {
+        if (Array.isArray(v)) return v;
+        if (v && typeof v === "object") {
+          if (Array.isArray(v.pairs)) return v.pairs;
+          if (Array.isArray(v.questions)) return v.questions;
+          if (Array.isArray(v.items)) return v.items;
+        }
+        return null;
+      };
+
+      const arr = unwrap(raw);
+      if (!arr) throw new Error("Unsupported JSON: expected an array or an object with 'pairs'.");
+
+      const out = [];
+      for (const item of arr) {
+        if (typeof item === "string") {
+          out.push({ q: item, a: "" });
+          continue;
+        }
+
+        if (!item || typeof item !== "object") continue;
+
+        const q = (item.q ?? item.question ?? item.prompt ?? item.text ?? "").toString().trim();
+        const a = (item.a ?? item.answer ?? item.reference_answer ?? "").toString();
+        const tag = (item.tag ?? item.type ?? "").toString().trim();
+
+        if (!q) continue;
+        out.push({ q, a, tag });
+      }
+
+      if (out.length === 0) throw new Error("No valid questions found in JSON.");
+      return out;
+    }
+
+    function parsePlainTextFaq(text) {
+      const normalized = String(text || "").replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+      const blocks = normalized.split(/\n\s*\n+/).map(b => b.trim()).filter(Boolean);
+      const out = [];
+
+      for (const block of blocks) {
+        const lines = block.split("\n").map(l => l.trim()).filter(Boolean);
+        if (lines.length === 0) continue;
+
+        let q = lines[0];
+        let a = lines.slice(1).join("\n");
+
+        if (/^q\s*[:\-]/i.test(q)) q = q.replace(/^q\s*[:\-]\s*/i, "");
+        if (/^a\s*[:\-]/i.test(a)) a = a.replace(/^a\s*[:\-]\s*/i, "");
+
+        q = q.trim();
+        a = a.trim();
+        if (!q) continue;
+
+        out.push({ q, a });
+      }
+
+      if (out.length === 0) throw new Error("No valid questions found in text file.");
+      return out;
+    }
+
+    function parseFaqFromText(text) {
+      // Try JSON first; if it fails, treat as plain text blocks.
+      try {
+        const raw = JSON.parse(text);
+        return coerceQuestions(raw);
+      } catch {
+        return parsePlainTextFaq(text);
+      }
+    }
+
+    async function isSupportedFaqJsonUrl(url) {
+      try {
+        const { ok, data } = await fetchJsonWithTimeout(url, { method: "GET" }, 4000);
+        if (!ok || !data) return false;
+        const qs = coerceQuestions(data);
+        return Array.isArray(qs) && qs.length > 0;
+      } catch {
+        return false;
+      }
+    }
+
+    async function loadFaqFile(file) {
+      if (!file) return;
+
+      setFeedback("Loading file...", "");
+      try {
+        const text = await file.text();
+        questions = parseFaqFromText(text);
+        clearAllAnswers();
+        resetSession();
+        saveQuestionsToLocalStorage(questions);
+        setFeedback(`Loaded ${questions.length} questions.`, "ok");
+      } catch (err) {
+        questions = DEFAULT_QUESTIONS.slice();
+        clearAllAnswers();
+        resetSession();
+        setFeedback(`Failed to load file (${String(err.message || err)}). Using default.`, "bad");
+      }
+    }
+
+    async function loadFaqFromUrl(url) {
+      const raw = String(url || "").trim();
+      if (!raw) {
+        setFeedback("Enter a URL first.", "bad");
+        return;
+      }
+
+      let resolvedUrl = raw;
+      try {
+        // Support relative paths (including just a filename) relative to the current page.
+        resolvedUrl = new URL(raw, window.location.href).toString();
+      } catch {
+        // keep raw
+      }
+
+      setFeedback("Loading URL...", "");
+      try {
+        const resp = await fetch(resolvedUrl, { method: "GET" });
+        if (!resp.ok) throw new Error(`http_${resp.status}`);
+        const text = await resp.text();
+        questions = parseFaqFromText(text);
+        clearAllAnswers();
+        resetSession();
+        saveQuestionsToLocalStorage(questions);
+        try { localStorage.setItem("generalFaq.faqUrl.v1", raw); } catch {}
+        setFeedback(`Loaded ${questions.length} questions from URL.`, "ok");
+      } catch (err) {
+        setFeedback(`Failed to load URL (${String(err.message || err)}). This may be a CORS issue.`, "bad");
+      }
+    }
+
+    function resolveBaseDirUrl() {
+      try {
+        const u = new URL(window.location.href);
+        u.hash = "";
+        u.search = "";
+        u.pathname = u.pathname.replace(/\/[^/]*$/, "/");
+        return u.toString();
+      } catch {
+        return null;
+      }
+    }
+
+    function githubPagesRepoInfo() {
+      try {
+        const u = new URL(window.location.href);
+        if (!/\.github\.io$/i.test(u.hostname)) return null;
+
+        const owner = u.hostname.split(".")[0];
+        const parts = u.pathname.split("/").filter(Boolean);
+        if (parts.length < 1) return null;
+
+        const repo = parts[0];
+        const dirParts = parts.slice(1, -1);
+        const dirPath = dirParts.join("/");
+        return { owner, repo, dirPath };
+      } catch {
+        return null;
+      }
+    }
+
+    async function listGithubPagesSameDirFiles() {
+      const info = githubPagesRepoInfo();
+      if (!info) return [];
+
+      const pathSuffix = info.dirPath ? "/" + info.dirPath : "";
+      const base = `https://api.github.com/repos/${info.owner}/${info.repo}/contents${pathSuffix}`;
+      const urls = [base, base + "?ref=main", base + "?ref=master"];
+
+      for (const url of urls) {
+        try {
+          const resp = await fetch(url, {
+            method: "GET",
+            headers: { "Accept": "application/vnd.github+json" }
+          });
+          if (!resp.ok) continue;
+          const data = await resp.json().catch(() => null);
+          if (!Array.isArray(data)) continue;
+
+          const out = [];
+          for (const item of data) {
+            if (!item || typeof item !== "object") continue;
+            if (item.type !== "file") continue;
+            const name = String(item.name || "").trim();
+            if (!/\.(json|txt)$/i.test(name)) continue;
+            out.push(name);
+          }
+
+          if (out.length) return out.sort((a, b) => a.localeCompare(b));
+        } catch {
+          // ignore
+        }
+      }
+
+      return [];
+    }
+
+    async function tryLoadSameDirManifest(baseDir) {
+      // Optional manifest support for hosts that do not expose directory listings.
+      // If present, it should list same-folder FAQ files.
+      // Supported shapes:
+      // - JSON array: ["a.json","b.txt"]
+      // - JSON object: {"files":["a.json"]}
+      const manifestNames = [
+        "faq_index.json",
+        "faq-index.json",
+        "faq_files.json",
+        "faq-files.json",
+        "index.json"
+      ];
+
+      for (const name of manifestNames) {
+        const url = baseDir + name;
+        try {
+          const resp = await fetch(url, { method: "GET" });
+          if (!resp.ok) continue;
+          const data = await resp.json().catch(() => null);
+          if (!data) continue;
+
+          const files = Array.isArray(data) ? data : (Array.isArray(data.files) ? data.files : []);
+          if (!Array.isArray(files) || !files.length) continue;
+          return files.map((v) => String(v || "").trim()).filter(Boolean);
+        } catch {
+          // ignore
+        }
+      }
+
+      return [];
+    }
+
+    async function listSameDirFaqCandidates() {
+      const baseDir = resolveBaseDirUrl();
+      if (!baseDir) return [];
+
+      const dedupe = new Set();
+      const out = [];
+      const push = (name) => {
+        const n = String(name || "").trim();
+        if (!n) return;
+        if (!/\.(json|txt)$/i.test(n)) return;
+        if (n.includes("/")) return;
+        if (dedupe.has(n)) return;
+        dedupe.add(n);
+        out.push(n);
+      };
+
+      // GitHub Pages project sites can list the repo folder via GitHub API.
+      // Example: https://cghuisunshine.github.io/Science/general_faq.html
+      // Lists files from https://api.github.com/repos/cghuisunshine/Science/contents/
+      try {
+        const ghFiles = await listGithubPagesSameDirFiles();
+        if (ghFiles && ghFiles.length) {
+          for (const f of ghFiles) push(f);
+        }
+      } catch {
+        // ignore
+      }
+
+      // Other hosts: if a manifest exists in the same folder, use it.
+      try {
+        const manifestFiles = await tryLoadSameDirManifest(baseDir);
+        if (manifestFiles && manifestFiles.length) {
+          for (const f of manifestFiles) push(f);
+        }
+      } catch {
+        // ignore
+      }
+
+      // Best case: server exposes directory listing at the folder URL.
+      try {
+        const resp = await fetch(baseDir, { method: "GET" });
+        if (resp.ok) {
+          const ct = (resp.headers.get("content-type") || "").toLowerCase();
+          const text = await resp.text();
+
+          if (ct.includes("application/json")) {
+            try {
+              const data = JSON.parse(text);
+              const files = Array.isArray(data) ? data : (Array.isArray(data.files) ? data.files : []);
+              for (const f of files) push(f);
+            } catch {
+              // ignore
+            }
+          } else {
+            try {
+              const doc = new DOMParser().parseFromString(text, "text/html");
+              const links = Array.from(doc.querySelectorAll("a[href]"));
+              for (const a of links) {
+                const href = a.getAttribute("href") || "";
+                if (!href || href === "../") continue;
+                const cleaned = href.split("#")[0].split("?")[0];
+                const filename = cleaned.replace(/^\.\//, "").replace(/\/+$/, "");
+                push(filename);
+              }
+            } catch {
+              // ignore
+            }
+          }
+        }
+      } catch {
+        // ignore
+      }
+
+      // Fallback: probe a few common filenames.
+      const candidates = ["index.json", "faq.json", "faq.txt", "questions.json", "questions.txt"];
+      for (const name of candidates) {
+        const url = baseDir + name;
+        try {
+          if (/\.json$/i.test(name)) {
+            const ok = await isSupportedFaqJsonUrl(url);
+            if (ok) push(name);
+          } else {
+            const resp = await fetch(url, { method: "GET" });
+            if (resp.ok) push(name);
+          }
+        } catch {
+          // ignore
+        }
+      }
+
+      // Filter out .json files that are not in a supported FAQ JSON shape.
+      const filtered = [];
+      for (const name of out) {
+        if (/\.json$/i.test(name)) {
+          try {
+            const resolvedUrl = new URL(name, baseDir).toString();
+            const ok = await isSupportedFaqJsonUrl(resolvedUrl);
+            if (!ok) continue;
+          } catch {
+            continue;
+          }
+        }
+        filtered.push(name);
+      }
+
+      return filtered;
+    }
+
+    async function refreshFaqUrlPicker() {
+      if (!faqUrlPickEl) return;
+
+      faqUrlPickEl.innerHTML = "";
+      const opt0 = document.createElement("option");
+      opt0.value = "";
+      opt0.textContent = "Same-folder files...";
+      faqUrlPickEl.appendChild(opt0);
+
+      const list = await listSameDirFaqCandidates();
+      if (!list.length) {
+        const opt = document.createElement("option");
+        opt.value = "";
+        opt.textContent = "(none found)";
+        opt.disabled = true;
+        faqUrlPickEl.appendChild(opt);
+        return;
+      }
+
+      for (const name of list) {
+        const opt = document.createElement("option");
+        opt.value = name;
+        opt.textContent = name;
+        faqUrlPickEl.appendChild(opt);
+      }
+    }
+
+    function loadFaqFromPaste(text) {
+      const trimmed = String(text || "").trim();
+      if (!trimmed) {
+        setFeedback("Nothing pasted.", "bad");
+        return;
+      }
+
+      try {
+        questions = parseFaqFromText(trimmed);
+        clearAllAnswers();
+        resetSession();
+        saveQuestionsToLocalStorage(questions);
+        setFeedback(`Loaded ${questions.length} questions from paste.`, "ok");
+      } catch (err) {
+        setFeedback(`Failed to parse pasted content (${String(err.message || err)}).`, "bad");
+      }
+    }
+
+    function storeCurrentDraftAnswer() {
+      const v = userAnswerEl.value;
+      if (typeof v !== "string") return;
+      answersByIndex[String(currentIndex)] = { answer: v, updated_at: new Date().toISOString() };
+      saveAnswersToLocalStorage();
+      updateStats();
+      // Keep "Check All" available; it can still review unanswered items.
+      if (btnCheckAll) btnCheckAll.disabled = false;
+    }
+
+    let draftSaveTimer = null;
+    userAnswerEl.addEventListener("input", () => {
+      clearTimeout(draftSaveTimer);
+      draftSaveTimer = setTimeout(storeCurrentDraftAnswer, 250);
+    });
+
+    userAnswerEl.addEventListener("blur", () => {
+      storeCurrentDraftAnswer();
+    });
+
+    btnToggleAnswer.addEventListener("click", toggleAnswer);
+
+    btnPrev.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    btnNext.addEventListener("click", () => {
+      if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    btnRandom.addEventListener("click", randomQuestion);
+
+    function openReviewPanel() {
+      if (!reviewPanelEl) return;
+      reviewPanelEl.style.display = "block";
+      reviewPanelEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function closeReviewPanel() {
+      if (!reviewPanelEl) return;
+      reviewPanelEl.style.display = "none";
+    }
+
+    if (btnCloseReview) {
+      btnCloseReview.addEventListener("click", closeReviewPanel);
+    }
+
+    faqJsonEl.addEventListener("change", () => {
+      const file = faqJsonEl.files && faqJsonEl.files[0];
+      loadFaqFile(file);
+    });
+
+    btnReloadDefault.addEventListener("click", () => {
+      questions = DEFAULT_QUESTIONS.slice();
+      clearAllAnswers();
+      resetSession();
+      saveQuestionsToLocalStorage(questions);
+      setFeedback("Loaded default questions.", "ok");
+      faqJsonEl.value = "";
+    });
+
+    if (btnLoadUrl) {
+      btnLoadUrl.addEventListener("click", () => {
+        loadFaqFromUrl(faqUrlEl ? faqUrlEl.value : "");
+      });
+    }
+
+    if (btnClearUrl) {
+      btnClearUrl.addEventListener("click", () => {
+        if (faqUrlEl) faqUrlEl.value = "";
+        try { localStorage.removeItem("generalFaq.faqUrl.v1"); } catch {}
+      });
+    }
+
+    if (faqUrlEl) {
+      const savedFaqUrl = localStorage.getItem("generalFaq.faqUrl.v1");
+      if (savedFaqUrl) faqUrlEl.value = savedFaqUrl;
+      faqUrlEl.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          if (btnLoadUrl) btnLoadUrl.click();
+        }
+      });
+    }
+
+    if (faqUrlPickEl) {
+      faqUrlPickEl.addEventListener("change", () => {
+        const v = (faqUrlPickEl.value || "").trim();
+        if (!v) return;
+        if (faqUrlEl) faqUrlEl.value = v;
+        if (btnLoadUrl) btnLoadUrl.click();
+      });
+    }
+
+    // Populate the picker (best-effort; depends on server allowing fetch of these files).
+    refreshFaqUrlPicker();
+
+    btnLoadPaste.addEventListener("click", () => {
+      loadFaqFromPaste(faqPasteEl.value);
+    });
+
+    btnClearPaste.addEventListener("click", () => {
+      faqPasteEl.value = "";
+    });
+
+    const savedGradeApiUrl = localStorage.getItem("gradeApiUrl");
+    gradeApiUrlEl.value = savedGradeApiUrl === null ? DEFAULT_GRADE_API_URL : savedGradeApiUrl;
+    gradeApiUrlEl.addEventListener("change", () => {
+      saveGradeApiUrl();
+      setApiStatus("", "");
+    });
+    btnTestApi.addEventListener("click", testApi);
+
+    // quick UX: Ctrl/Cmd+Enter submits "Check my answer"
+    userAnswerEl.addEventListener("keydown", (e) => {
+      const isEnter = e.key === "Enter";
+      const isModified = e.metaKey || e.ctrlKey;
+      if (isEnter && isModified && !btnCheck.disabled) {
+        e.preventDefault();
+        btnCheck.click();
+      }
+    });
+
+    if (btnCheckAll) {
+      btnCheckAll.addEventListener("click", checkAllAnswered);
+    }
+
+    if (btnReset) {
+      btnReset.addEventListener("click", () => {
+        const ok = window.confirm("Reset will clear all saved answers for this FAQ set. Continue?");
+        if (!ok) return;
+        resetAllAnswersUi();
+      });
+    }
+
+    async function gradeOne({ questionText, userText, correctText }) {
+      const gradeUrl = getGradeApiUrl();
+      const aiTimeoutMs = 60000;
+
+      if (gradeUrl) {
+        const pair = { question: questionText, answer: userText };
+        if (correctText) pair.reference_answer = correctText;
+        const payload = { pairs: [pair] };
+
+        const { ok, status, data, text, aborted } = await fetchJsonWithTimeout(
+          gradeUrl,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          },
+          aiTimeoutMs
+        );
+
+        if (aborted) throw new Error(`timeout_after_${Math.round(aiTimeoutMs / 1000)}s`);
+
+        const first = extractFirstGradeResult(data);
+        if (!ok || !first) {
+          const reason = data && data.error ? data.error : `bad_response_${status}`;
+          const detail = text ? ` (${text.slice(0, 160)})` : "";
+          throw new Error(reason + detail);
+        }
+
+        const verdict = first.verdict === "correct" ? "correct" : "wrong";
+        const explanation = (first.explanation || "").trim();
+        return { verdict, explanation, mode: "ai" };
+      }
+
+      const local = localOverlapCheck(userText, correctText);
+      if (local.verdict === "unknown") return { verdict: "unknown", explanation: local.explanation, mode: "local" };
+      return { verdict: local.verdict, explanation: local.explanation, mode: "local" };
+    }
+
+    async function gradeManyAi(pairs) {
+      const gradeUrl = getGradeApiUrl();
+      const aiTimeoutMs = 60000;
+      if (!gradeUrl) throw new Error("no_grade_url");
+      if (!Array.isArray(pairs) || pairs.length === 0) return [];
+
+      const payload = { pairs };
+      const { ok, status, data, text, aborted } = await fetchJsonWithTimeout(
+        gradeUrl,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        },
+        aiTimeoutMs
+      );
+
+      if (aborted) throw new Error(`timeout_after_${Math.round(aiTimeoutMs / 1000)}s`);
+
+      const results = extractGradeResults(data);
+      if (!ok || !results || !Array.isArray(results)) {
+        const reason = data && data.error ? data.error : `bad_response_${status}`;
+        const detail = text ? ` (${text.slice(0, 160)})` : "";
+        throw new Error(reason + detail);
+      }
+
+      return results;
+    }
+
+    btnCheck.addEventListener("click", async () => {
+      storeCurrentDraftAnswer();
+
+      const userText = userAnswerEl.value.trim();
+      const qObj = currentQuestion();
+      const questionText = qObj ? qObj.q : "";
+      const correctText = qObj && typeof qObj.a === "string" ? qObj.a.trim() : "";
+
+      if (!qObj) return;
+
+      if (!userText) {
+          if (hasModelAnswer(qObj)) {
+            setFeedback("No answer entered. Showing the model answer.", "bad");
+            answerCardEl.style.display = "block";
+            btnToggleAnswer.textContent = "Hide Answer";
+          } else {
+            setFeedback("No answer entered.", "bad");
+          }
+          return;
+      }
+
+      const gradeUrl = getGradeApiUrl();
+      btnCheck.disabled = true;
+      setFeedback(gradeUrl ? "Checking with AI grader..." : "Checking...", "");
+
+      try {
+        const result = await gradeOne({ questionText, userText, correctText });
+        const isCorrect = result.verdict === "correct";
+        const prefix = result.verdict === "unknown" ? "" : (isCorrect ? "Correct. " : "Wrong. ");
+        setFeedback(prefix + (result.explanation || ""), isCorrect ? "ok" : "bad");
+      } catch (err) {
+        console.warn("Grading failed:", err);
+
+        const local = localOverlapCheck(userText, correctText);
+        if (local.verdict === "unknown") {
+          setFeedback("AI grading unavailable; also no model answer to compare against.", "bad");
+        } else {
+          setFeedback(
+            `AI grading unavailable; using overlap check. ${local.verdict === "correct" ? "Correct." : "Wrong."} ${local.explanation}`,
+            local.verdict === "correct" ? "ok" : "bad"
+          );
+        }
+      } finally {
+        btnCheck.disabled = false;
+        if (hasModelAnswer(qObj)) {
+          answerCardEl.style.display = "block";
+          btnToggleAnswer.textContent = "Hide Answer";
+        }
+      }
+    });
+
+    function renderReviewItem({ index, q, userAnswer, correctAnswer, verdict, explanation }) {
+      const safe = (s) => String(s || "");
+      const verdictClass =
+        verdict === "correct" ? "ok" :
+        (verdict === "unknown" ? "unknown" :
+        (verdict === "na" ? "na" : "bad"));
+      const verdictText =
+        verdict === "correct" ? "Correct" :
+        (verdict === "unknown" ? "Unknown" :
+        (verdict === "na" ? "Not answered" : "Wrong"));
+
+      const userDisplay = (typeof userAnswer === "string" && userAnswer.trim()) ? userAnswer : "(Not answered)";
+      const correctDisplay = (typeof correctAnswer === "string" && correctAnswer.trim())
+        ? correctAnswer
+        : "(No model answer available. Use \"Show Answer\" with AI /qa enabled.)";
+
+      const el = document.createElement("div");
+      el.className = "review-item";
+      el.innerHTML =
+        `<div class="meta">` +
+          `<div class="idx">Q${index + 1}</div>` +
+          `<div class="verdict ${verdictClass}">${verdictText}</div>` +
+        `</div>` +
+        `<div class="q">${escapeHtml(safe(q))}</div>` +
+        `<div class="explain">${escapeHtml(safe(explanation))}</div>` +
+        `<div class="answer">` +
+          `<div class="k">Your answer</div>` +
+          `<div class="v">${escapeHtml(safe(userDisplay))}</div>` +
+        `</div>` +
+        `<div class="answer">` +
+          `<div class="k">Correct answer</div>` +
+          `<div class="v">${escapeHtml(safe(correctDisplay))}</div>` +
+        `</div>`;
+
+      return el;
+    }
+
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    async function checkAllAnswered() {
+      storeCurrentDraftAnswer();
+
+      const answeredIndices = [];
+      for (let idx = 0; idx < questions.length; idx++) {
+        const v = answersByIndex[String(idx)];
+        if (v && typeof v.answer === "string" && v.answer.trim()) answeredIndices.push(idx);
+      }
+
+      const answeredCount = answeredIndices.length;
+      const totalCount = questions.length;
+
+      if (btnCheckAll) btnCheckAll.disabled = true;
+      if (reviewSubEl) reviewSubEl.textContent = `Checking answered questions (${answeredCount}/${totalCount})... (Correct answers will be shown for all questions.)`;
+      if (reviewListEl) reviewListEl.innerHTML = "";
+      openReviewPanel();
+
+      let correct = 0;
+      let wrong = 0;
+      let unknown = 0;
+      let notAnswered = 0;
+
+      const gradeUrl = getGradeApiUrl();
+
+      // Prefer batching when AI grader is enabled.
+      if (gradeUrl && answeredCount > 0) {
+        const pairs = [];
+        const indexByPair = [];
+
+        for (const idx of answeredIndices) {
+          const qObj = questions[idx];
+          if (!qObj) continue;
+
+          const saved = answersByIndex[String(idx)];
+          const userText = (saved && typeof saved.answer === "string") ? String(saved.answer).trim() : "";
+          const correctText = (qObj && typeof qObj.a === "string") ? qObj.a.trim() : "";
+
+          const pair = { question: qObj.q, answer: userText };
+          if (correctText) pair.reference_answer = correctText;
+          pairs.push(pair);
+          indexByPair.push(idx);
+        }
+
+        try {
+          const results = await gradeManyAi(pairs);
+          const byIndex = {};
+
+          for (let i = 0; i < indexByPair.length; i++) {
+            const idx = indexByPair[i];
+            const r = results[i] || {};
+            const verdict = r.verdict === "correct" ? "correct" : (r.verdict === "unknown" ? "unknown" : "wrong");
+            const explanation = String(r.explanation || "").trim();
+            byIndex[String(idx)] = { verdict, explanation };
+          }
+
+          for (let idx = 0; idx < questions.length; idx++) {
+            const qObj = questions[idx];
+            if (!qObj) continue;
+
+            const saved = answersByIndex[String(idx)];
+            const userText = saved && typeof saved.answer === "string" ? String(saved.answer).trim() : "";
+
+            let verdict = "na";
+            let explanation = "Not answered.";
+
+            if (userText) {
+              const r = byIndex[String(idx)] || { verdict: "wrong", explanation: "" };
+              verdict = r.verdict;
+              explanation = r.explanation || "";
+
+              if (verdict === "correct") correct++;
+              else if (verdict === "unknown") unknown++;
+              else wrong++;
+            } else {
+              notAnswered++;
+            }
+
+            const correctAnswer = await getCorrectAnswerTextForIndex(idx);
+            if (reviewListEl) {
+              reviewListEl.appendChild(renderReviewItem({
+                index: idx,
+                q: qObj.q,
+                userAnswer: userText,
+                correctAnswer,
+                verdict,
+                explanation
+              }));
+            }
+          }
+        } catch (err) {
+          console.warn("Batch grading failed; falling back to local/per-item:", err);
+
+          // fall back for *all* questions (showing not-answered too)
+          for (let idx = 0; idx < questions.length; idx++) {
+            const qObj = questions[idx];
+            if (!qObj) continue;
+
+            const saved = answersByIndex[String(idx)];
+            const userText = saved && typeof saved.answer === "string" ? String(saved.answer).trim() : "";
+            const correctText = (qObj && typeof qObj.a === "string") ? qObj.a.trim() : "";
+
+            let verdict = "na";
+            let explanation = "Not answered.";
+
+            if (userText) {
+              try {
+                const one = await gradeOne({ questionText: qObj.q, userText, correctText });
+                verdict = one.verdict || "wrong";
+                explanation = one.explanation || "";
+              } catch (err2) {
+                console.warn("Check-all grading failed:", err2);
+                const local = localOverlapCheck(userText, correctText);
+                verdict = local.verdict;
+                explanation = `AI grading unavailable; using overlap check. ${local.explanation}`;
+              }
+
+              if (verdict === "correct") correct++;
+              else if (verdict === "unknown") unknown++;
+              else wrong++;
+            } else {
+              notAnswered++;
+            }
+
+            const correctAnswer = await getCorrectAnswerTextForIndex(idx);
+            if (reviewListEl) {
+              reviewListEl.appendChild(renderReviewItem({
+                index: idx,
+                q: qObj.q,
+                userAnswer: userText,
+                correctAnswer,
+                verdict,
+                explanation
+              }));
+            }
+          }
+        }
+      } else {
+        // No AI grader (or no answered questions): local overlap check per question.
+        for (let idx = 0; idx < questions.length; idx++) {
+          const qObj = questions[idx];
+          if (!qObj) continue;
+
+          const saved = answersByIndex[String(idx)];
+          const userText = saved && typeof saved.answer === "string" ? String(saved.answer).trim() : "";
+          const correctText = (qObj && typeof qObj.a === "string") ? qObj.a.trim() : "";
+
+          let verdict = "na";
+          let explanation = "Not answered.";
+
+          if (userText) {
+            const local = localOverlapCheck(userText, correctText);
+            verdict = local.verdict;
+            explanation = local.explanation;
+
+            if (verdict === "correct") correct++;
+            else if (verdict === "unknown") unknown++;
+            else wrong++;
+          } else {
+            notAnswered++;
+          }
+
+          const correctAnswer = await getCorrectAnswerTextForIndex(idx);
+          if (reviewListEl) {
+            reviewListEl.appendChild(renderReviewItem({
+              index: idx,
+              q: qObj.q,
+              userAnswer: userText,
+              correctAnswer,
+              verdict,
+              explanation
+            }));
+          }
+        }
+      }
+
+      if (reviewSubEl) {
+        const denom = answeredCount || 1;
+        const pct = Math.round((correct / denom) * 100);
+        reviewSubEl.textContent = `Done. Answered: ${answeredCount}/${totalCount}. Correct: ${correct}. Wrong: ${wrong}. Unknown: ${unknown}. Not answered: ${notAnswered}. Correct rate: ${pct}% (of answered).`;
+      }
+
+      if (btnCheckAll) btnCheckAll.disabled = false;
+    }
+
+    // initial render
+    // Persist whatever we started with (default or previously saved).
+    saveQuestionsToLocalStorage(questions);
+    answersByIndex = loadAnswersFromLocalStorage();
+    generatedAnswersByIndex = loadGeneratedAnswersFromLocalStorage();
+    resetSession();
+    updateStats();
+  </script>
+</body>
+</html>

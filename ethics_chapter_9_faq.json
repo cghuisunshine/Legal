@@ -1,0 +1,42 @@
+[
+  {
+    "q": "What are the key challenges presented by automation in the workplace according to the text?",
+    "a": "Automation is raising concerns about job destruction and increasing unemployment, particularly in manufacturing and white-collar sectors. While it improves productivity, it seems to force workers into longer hours, leading to issues of job security and work-life balance.",
+    "tag": "Chapter 9 - Work and Wealth"
+  },
+  {
+    "q": "How has globalization affected the job market and employment opportunities?",
+    "a": "Globalization has resulted in the outsourcing of jobs to countries like India and the Philippines where labor is cheaper, raising debates about its impact on local job markets in high-wage countries. Some believe globalization benefits everyone globally, while others fear it harms local workers.",
+    "tag": "Chapter 9 - Work and Wealth"
+  },
+  {
+    "q": "Does increased productivity from automation necessarily correlate with reduced work hours for employees?",
+    "a": "Despite substantial productivity gains from automation, workers are not experiencing shorter work hours; instead, they are working harder to maintain job security, leading to a rise in hours worked.",
+    "tag": "Chapter 9 - Work and Wealth"
+  },
+  {
+    "q": "What is the concept of the 'winner-take-all society' and how does it relate to income inequality?",
+    "a": "The 'winner-take-all society' describes a situation where a small number of top performers in various fields reap disproportionate rewards compared to the majority. This phenomenon is facilitated by technological advancements that enable a few to dominate markets, exacerbating income inequality.",
+    "tag": "Chapter 9 - Work and Wealth"
+  },
+  {
+    "q": "Can automation lead to job creation, and what mechanism facilitates this process?",
+    "a": "Yes, automation can create jobs by reducing production costs, which in turn lowers prices for consumers. With lower prices, the demand for those products increases, necessitating higher output and subsequently creating more jobs.",
+    "tag": "Chapter 9 - Work and Wealth"
+  },
+  {
+    "q": "What ethical dilemmas arise regarding the construction of intelligent machines?",
+    "a": "There are several concerns regarding the moral implications of creating highly intelligent machines, such as the potential for those machines to render human jobs obsolete and the moral status they might hold. Ethical considerations include the rights of such beings and the risk of their use for malevolent purposes.",
+    "tag": "Chapter 9 - Work and Wealth"
+  },
+  {
+    "q": "How does the digital divide manifest according to the text?",
+    "a": "The digital divide reflects a disparity in access to technology, divided into global and social dimensions. Industrialized nations differ significantly from less developed countries in internet access while also exhibiting inequality among socio-economic classes within countries.",
+    "tag": "Chapter 9 - Work and Wealth"
+  },
+  {
+    "q": "What do critics say about the idea that access to information technology guarantees socio-economic advancement?",
+    "a": "Critics argue that simply providing access to technology does not equate to successful utilization or socio-economic improvement. Social systems must also adapt to support effective engagement with technology, and patterns of adoption often perpetuate existing inequalities.",
+    "tag": "Chapter 9 - Work and Wealth"
+  }
+]

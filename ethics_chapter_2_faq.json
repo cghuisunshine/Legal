@@ -1,0 +1,42 @@
+[
+  {
+    "q": "How has the internet impacted the way we gather news?",
+    "a": "The internet has significantly transformed news consumption patterns; according to a Gallup poll mentioned in the chapter, more American adults now obtain their news from the internet than from newspapers, with the numbers indicating 21% turning to online news versus 9% for newspapers. This reflects a broader trend of shifting media preferences towards more immediate and accessible online platforms.",
+    "tag": "Chapter 2 - Networked Communications"
+  },
+  {
+    "q": "What are the moral implications of spam in email communications?",
+    "a": "Spam, or unsolicited bulk email, has degraded the quality of email communications, making it difficult for users to sift through unwanted messages. This raises ethical concerns about fairness in communication, as spam can drown out legitimate messages. It highlights the responsibility of internet users to respect others' communication space, preventing the misuse of easily accessible technology.",
+    "tag": "Chapter 2 - Networked Communications"
+  },
+  {
+    "q": "What ethical theories were applied to evaluate Ann's action of sending a mass email for a personal cause?",
+    "a": "Five ethical theories were discussed in evaluating Ann's actions: 1. Kantian analysis questioned her respect for her coworkers' autonomy. 2. Act utilitarian analysis looked at the balance of benefits (selling cookies) against harms (lost productivity). 3. Rule utilitarian analysis suggested that if everyone sent mass emails for personal fundraising, it would lead to more harm than good. 4. Social contract theory considered her right to free speech in a workplace context. 5. Virtue ethics assessed her failure to exhibit respect and fairness towards her coworkers.",
+    "tag": "Chapter 2 - Networked Communications"
+  },
+  {
+    "q": "What is the significance of web filters according to the Child Internet Protection Act?",
+    "a": "The Child Internet Protection Act mandates that libraries receiving federal funds must install web filters to protect children from accessing inappropriate material. This raises ethical considerations about censorship versus the need for child safety; critics argue that while the act aims to shield minors, it inadvertently blocks access to legitimate content, demonstrating a conflict between protecting children and ensuring freedom of information.",
+    "tag": "Chapter 2 - Networked Communications"
+  },
+  {
+    "q": "How do social networking sites play a role in political activism according to the chapter?",
+    "a": "Social networking sites like Facebook and Twitter have been pivotal in facilitating political activism, particularly highlighted during events like the Arab Spring. They serve as platforms for organization and dissemination of information, allowing activists to coordinate efforts and rally support quickly, thus transforming traditional political engagement.",
+    "tag": "Chapter 2 - Networked Communications"
+  },
+  {
+    "q": "What are the ethical challenges associated with sting operations aimed at online predators?",
+    "a": "Sting operations raise ethical issues primarily regarding entrapment and privacy. While they aim to protect children from potential predators, they involve deception by law enforcement, which can conflict with the principles of honesty and respect for individuals' rights. The challenge lies in balancing public safety with ethical law enforcement practices.",
+    "tag": "Chapter 2 - Networked Communications"
+  },
+  {
+    "q": "In what ways is censorship complicated by the presence of the internet?",
+    "a": "Censorship is complex in the digital age due to the internet's vast, decentralized nature, which allows for many-to-many communication. This makes it difficult for governments to control information flow effectively. Additionally, the sheer scale of content and the dynamism of the internet challenge traditional censorship methods, suggesting that strategies need to adapt to ensure fairness and public safety without infringing on freedom of expression.",
+    "tag": "Chapter 2 - Networked Communications"
+  },
+  {
+    "q": "What arguments are presented regarding internet addiction, and how do ethical theories evaluate this concern?",
+    "a": "The chapter discusses the controversy surrounding internet addiction, with some psychologists advocating for its recognition as a legitimate addiction while others argue it is more a compulsion. Ethical theories like Kantianism argue individuals are responsible for their choices, even if they are struggling with compulsions. Utilitarian viewpoints consider the effects of excessive internet use on individual well-being and societal impacts, calling for personal accountability alongside acknowledgment of social influences.",
+    "tag": "Chapter 2 - Networked Communications"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "q": "What happens when a computer is fed bad information or misinterpreted data?",
+    "a": "This can lead to various outcomes, ranging from trivial issues, like a game crashing, to severe consequences, such as incorrect billing or even fatalities. For instance, a flawed database may disenfranchise voters or lead to false arrests, affecting individuals' rights and freedoms.",
+    "tag": "Chapter 7 - Computer Reliability"
+  },
+  {
+    "q": "How do software bugs impact business decisions?",
+    "a": "Software bugs can lead to poor decision-making that may cost businesses millions of dollars. For example, a billing error can create a significant financial burden for both the company and the consumers affected.",
+    "tag": "Chapter 7 - Computer Reliability"
+  },
+  {
+    "q": "What is an embedded system, and how does it relate to reliability?",
+    "a": "An embedded system is a computer embedded within another device, like a car or a home appliance. Its reliability is crucial as a failure can cause significant issues, such as accidents from faulty airbag deployment.",
+    "tag": "Chapter 7 - Computer Reliability"
+  },
+  {
+    "q": "Can a well-engineered system tolerate component failures?",
+    "a": "Yes, a well-engineered system should be able to tolerate the failure of individual components without collapsing. The goal is to design resilience into systems, ensuring that a single point of failure does not compromise the entire operation.",
+    "tag": "Chapter 7 - Computer Reliability"
+  },
+  {
+    "q": "Why is the accuracy of databases like the NCIC important?",
+    "a": "The accuracy of databases like the National Crime Information Center is vital because inaccuracies can lead to false arrests, violating individuals' rights and undermining the justice system.",
+    "tag": "Chapter 7 - Computer Reliability"
+  },
+  {
+    "q": "What lessons can be learned from the failure of systems like the Therac-25?",
+    "a": "The Therac-25 visualizes the importance of redundancy in critical systems. It showed that relying solely on software without hardware safeguards can lead to catastrophic failures, emphasizing the need for comprehensive safety measures.",
+    "tag": "Chapter 7 - Computer Reliability"
+  },
+  {
+    "q": "How can computer simulations be both beneficial and dangerous?",
+    "a": "Computer simulations can be highly beneficial for predicting complex behaviors, such as climate patterns or vehicle safety. However, they can also lead to disastrous outcomes if the underlying models are flawed or based on incorrect assumptions.",
+    "tag": "Chapter 7 - Computer Reliability"
+  },
+  {
+    "q": "What is verification and validation in the context of computer models?",
+    "a": "Verification ensures that the software correctly implements the model, while validation checks if the model accurately represents the real system. Both are crucial for ensuring reliability and accuracy in computer simulations.",
+    "tag": "Chapter 7 - Computer Reliability"
+  },
+  {
+    "q": "How did the case of the Patriot missile system illustrate issues with software reliability?",
+    "a": "The Patriot missile system failed to intercept an incoming Scud missile due to a software error involving time calculations. This case highlighted how critical precision is in software, especially in high-stakes environments like military defense.",
+    "tag": "Chapter 7 - Computer Reliability"
+  },
+  {
+    "q": "Should software manufacturers be held accountable for their products?",
+    "a": "There's a complex debate on this, especially regarding whether software should be treated like traditional products subject to liability laws. With increasing reliance on software for critical functions, accountability may need to be enforced more stringently.",
+    "tag": "Chapter 7 - Computer Reliability"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "q": "What does John Shedd's quote about ships imply in the context of computer and network security?",
+    "a": "The quote suggests that while staying safe (like a ship in harbor) may be comforting, it is essential to venture out (like ships are meant to sail) and face potential risks, such as those present in using computers and the Internet. This highlights the importance of balancing security with the benefits of technology.",
+    "tag": "Chapter 6 - Computer and Network Security"
+  },
+  {
+    "q": "How has the definition of 'hacker' evolved since the 1950s?",
+    "a": "Initially, a hacker was someone who explored computer systems and modified them creatively. Over time, with incidents like those portrayed in films, the term shifted to broadly encompass individuals gaining unauthorized access to systems, often with malicious intent.",
+    "tag": "Chapter 6 - Computer and Network Security"
+  },
+  {
+    "q": "Why is it dangerous to use open Wi-Fi networks?",
+    "a": "Open Wi-Fi networks do not require a password, making them vulnerable to eavesdropping. Attackers can intercept data, including sensitive information like passwords and credit card details, thus putting users' personal information at risk.",
+    "tag": "Chapter 6 - Computer and Network Security"
+  },
+  {
+    "q": "What are some effective ways to strengthen online account security?",
+    "a": "To enhance security, use long, complex passwords, avoid dictionary words, enable two-factor authentication, and never reuse passwords across different accounts. Setting security questions with unguessable answers also helps.",
+    "tag": "Chapter 6 - Computer and Network Security"
+  },
+  {
+    "q": "What role did the Firesheep extension play in raising awareness about security?",
+    "a": "Firesheep demonstrated the vulnerabilities of unencrypted Wi-Fi networks by enabling users to hijack sessions, drawing significant public attention to the issue. This led major websites like Facebook and Twitter to implement HTTPS, enhancing user security.",
+    "tag": "Chapter 6 - Computer and Network Security"
+  },
+  {
+    "q": "How do denial-of-service (DoS) attacks affect organizations?",
+    "a": "DoS attacks disrupt a server's ability to provide services, potentially causing significant operational and financial losses by incapacitating access to online services, diminishing customer trust, and harming business transactions.",
+    "tag": "Chapter 6 - Computer and Network Security"
+  },
+  {
+    "q": "What ethical concerns arise from hacking incidents like those involving Robert Morris Jr.'s Internet worm?",
+    "a": "The ethical concerns center around unauthorized access to systems, the potential for unintended harm from experiments on a public scale, and the need for accountability for the consequent disruptions caused by malware.",
+    "tag": "Chapter 6 - Computer and Network Security"
+  },
+  {
+    "q": "How does malware propagate and pose a threat to users?",
+    "a": "Malware can spread through email attachments, infected software, unpatched vulnerabilities, or when users visit compromised websites. Once on a system, it can steal data, damage files, and create backdoor access for further attacks.",
+    "tag": "Chapter 6 - Computer and Network Security"
+  },
+  {
+    "q": "What is phishing, and how does it threaten individuals and organizations?",
+    "a": "Phishing is a deceptive practice where attackers pose as trustworthy entities to trick users into revealing sensitive information. This can lead to identity theft, financial fraud, and breaches of organizational security.",
+    "tag": "Chapter 6 - Computer and Network Security"
+  },
+  {
+    "q": "Why is it important for individuals to keep their antivirus software updated?",
+    "a": "Keeping antivirus software current is crucial to protect against new threats, detect vulnerabilities, and prevent malware infections, especially as security threats evolve quickly.",
+    "tag": "Chapter 6 - Computer and Network Security"
+  }
+]
