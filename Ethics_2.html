@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Ethics_2</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+    body {
+      max-width: 920px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+      line-height: 1.65;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      background: #ffffff;
+    }
+    h1, h2, h3, h4, h5, h6 { line-height: 1.25; }
+    hr { border: 0; border-top: 1px solid #c7c7c7; margin: 2rem 0; }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+      display: block;
+      overflow-x: auto;
+    }
+    th, td {
+      border: 1px solid #b8b8b8;
+      padding: 0.5rem 0.65rem;
+      vertical-align: top;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: #f2f2f2;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+    pre code {
+      display: block;
+      padding: 1rem;
+      overflow: auto;
+    }
+    blockquote {
+      margin: 1rem 0;
+      padding: 0.3rem 1rem;
+      border-left: 4px solid #8a8a8a;
+      color: #444;
+      background: #fafafa;
+    }
+    img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+<h1 id="acit-4770--midterm-study-guide-part-2">ACIT 4770 – Midterm Study
+Guide Part 2</h1>
+<h2 id="practice-exam--answer-key">Practice Exam + Answer Key</h2>
+<p><strong>Exam:</strong> Thursday, February 26, 2026 | 10:30 AM – 12:30
+PM<br />
+<strong>Format modelled on:</strong> definition questions + longer
+questions with choice + one short case study</p>
+<blockquote>
+<p>💡 <strong>Study tip:</strong> Cover the Answer Key section, write
+your answers out by hand (simulates the actual exam), then check. Wait a
+day and try again — that's spaced repetition at work.</p>
+</blockquote>
+<hr />
+<h2 id="part-a--definitions--short-answer">PART A – Definitions / Short
+Answer</h2>
+<p><em>These reflect the "some definition type questions" Trevor
+mentioned. Aim for 2–4 sentences each.</em></p>
+<hr />
+<p><strong>Q1.</strong> Define <em>society</em> as used in this
+course.</p>
+<p><strong>Q2.</strong> Define <em>morality</em> as used in this course.
+How is it different from ethics?</p>
+<p><strong>Q3.</strong> Define <em>ethics</em> as used in this
+course.</p>
+<p><strong>Q4.</strong> What makes an ethical theory "workable"? Give
+the specific criterion from Trevor's slides.</p>
+<p><strong>Q5.</strong> What is <em>relativism</em>? Name the two forms
+covered in the course.</p>
+<p><strong>Q6.</strong> What is <em>ethical egoism</em>?</p>
+<p><strong>Q7.</strong> What is the <em>Divine Command Theory</em> of
+ethics?</p>
+<p><strong>Q8.</strong> Why are subjective relativism, cultural
+relativism, divine command theory, and ethical egoism considered
+<strong>unworkable</strong> ethical theories?</p>
+<p><strong>Q9.</strong> What is the <em>Principle of Utility</em>?</p>
+<p><strong>Q10.</strong> What does it mean for Act Utilitarianism to be
+<em>consequentialist</em>?</p>
+<p><strong>Q11.</strong> According to Act Utilitarianism, when is an
+action "good"? When is it "bad"?</p>
+<p><strong>Q12.</strong> What is the difference between <em>Act
+Utilitarianism</em> and <em>Rule Utilitarianism</em>?</p>
+<hr />
+<h2 id="part-b--longer-questions-with-choice">PART B – Longer Questions
+(with choice)</h2>
+<p><em>Trevor said there will be "a couple of longer questions, with
+some choice." Practice writing structured paragraph responses.</em></p>
+<hr />
+<p><strong>Q13.</strong> IT professionals face ethical decisions
+regularly. Using <strong>one workable ethical theory</strong> from the
+course, analyze the following scenario:</p>
+<blockquote>
+<p>You are a junior developer at a cloud services company. You spend a
+significant portion of your workday answering customer support tickets,
+which takes time away from development work. Your performance review is
+partly based on the volume and speed of ticket resolutions. You are
+considering using an AI chatbot to handle responses without telling your
+manager.</p>
+</blockquote>
+<p>In your response:</p>
+<ul>
+<li>Identify which ethical theory you are applying</li>
+<li>Explain the core principle of that theory</li>
+<li>Apply it to the scenario and reach a clear conclusion (yes/no)</li>
+<li>Note one weakness of the theory</li>
+</ul>
+<hr />
+<p><strong>Q14.</strong> The Government is considering replacing a curvy
+stretch of highway. The new segment would be shorter, but 150 houses
+would need to be demolished and some wildlife habitat would be
+destroyed. A utilitarian analysis estimates costs of $31M and benefits
+of $39M.</p>
+<ul>
+<li>Apply <strong>Act Utilitarianism</strong> to evaluate whether the
+highway should be built</li>
+<li>Identify <strong>two things missing</strong> from the cost-benefit
+analysis above that a fuller ethical analysis should include</li>
+<li>Would a <strong>Kantian</strong> analysis reach the same conclusion?
+Why or why not?</li>
+</ul>
+<hr />
+<p><strong>Q15.</strong> Compare and contrast <strong>two unworkable
+ethical theories</strong> from this course. For each:</p>
+<ul>
+<li>State the theory and its core claim</li>
+<li>Give one reason it is appealing (case <em>for</em>)</li>
+<li>Give one decisive reason it fails as a workable theory (case
+<em>against</em>)</li>
+</ul>
+<hr />
+<h2 id="part-c--case-study">PART C – Case Study</h2>
+<p><em>Trevor said "one short case study." Practice identifying
+stakeholders and applying a theory.</em></p>
+<hr />
+<p><strong>Q16. Case Study — The Trolley Problem &amp; Autonomous
+Vehicles</strong></p>
+<p>An autonomous vehicle (AV) is travelling at highway speed. A sudden
+brake failure means the car cannot stop. It must choose between:</p>
+<ul>
+<li><strong>Option A:</strong> Continue straight, striking 3 pedestrians
+who crossed illegally</li>
+<li><strong>Option B:</strong> Swerve, striking 1 pedestrian on the
+sidewalk who did nothing wrong</li>
+</ul>
+<p>The AV's software must be programmed with a decision rule <em>in
+advance</em>.</p>
+<p><strong>Answer the following:</strong></p>
+<p>a) Who are the stakeholders in this decision?</p>
+<p>b) Apply <strong>Act Utilitarianism</strong> to determine which
+option the AV should be programmed to choose. Show your reasoning.</p>
+<p>c) Apply <strong>Kantianism</strong> to the same scenario. Does it
+reach the same conclusion? Why or why not?</p>
+<p>d) What does this scenario reveal about the limits of using a single
+ethical theory to make technology decisions?</p>
+<hr />
+<h2 id="answer-key">ANSWER KEY</h2>
+<blockquote>
+<p>⚠️ Write your own answers first before reading these!</p>
+</blockquote>
+<hr />
+<h3 id="part-a--answer-key">Part A – Answer Key</h3>
+<p><strong>A1. Society</strong> A society is an association of people
+organized under a system of rules designed to advance the good of its
+members over time. <em>(Trevor's exact slide definition)</em></p>
+<p><strong>A2. Morality vs. Ethics</strong> Morality refers to a
+society's rules of conduct — what people ought and ought not to do in
+various situations. Ethics is the <em>philosophical study</em> of
+morality — a rational examination of those moral beliefs and behaviors.
+The difference: morality is the set of rules; ethics is the reasoned
+analysis of those rules.</p>
+<p><strong>A3. Ethics</strong> Ethics is the philosophical study of
+morality — a rational examination into people's moral beliefs and
+behavior. <em>(Trevor's exact slide definition)</em></p>
+<p><strong>A4. Workable Ethical Theory</strong> A workable ethical
+theory must allow you to examine moral problems, reach conclusions
+logically, and <strong>defend those conclusions in front of a skeptical,
+yet open-minded audience.</strong> <em>(This is Trevor's exact
+definition from the Terms slide — memorize this phrasing.)</em></p>
+<p><strong>A5. Relativism</strong> Relativism is the view that moral
+judgements are not universal — what is right or wrong depends on the
+person or group making the judgement. The two forms are:</p>
+<ul>
+<li><strong>Subjective Relativism:</strong> Each individual decides for
+themselves what is right</li>
+<li><strong>Cultural Relativism:</strong> What is right is determined by
+one's culture or society</li>
+</ul>
+<p><strong>A6. Ethical Egoism</strong> Ethical egoism holds that the
+morally right action is whatever best serves one's own long-term
+self-interest. It is not simply selfishness — it is a philosophical
+position that self-interest <em>should</em> be the basis of moral
+decisions.</p>
+<p><strong>A7. Divine Command Theory</strong> Divine Command Theory
+holds that an action is morally right if and only if God commands it,
+and morally wrong if God forbids it. Morality is derived from religious
+authority.</p>
+<p><strong>A8. Why These Are Unworkable</strong> All four fail the
+workable theory test: they cannot be used to logically examine moral
+problems and defend conclusions to a skeptical audience.</p>
+<ul>
+<li><em>Subjective Relativism:</em> Makes moral disagreement impossible
+— if everyone is right for themselves, there's no basis to say anyone is
+wrong</li>
+<li><em>Cultural Relativism:</em> Cannot critique other cultures; leads
+to moral isolationism</li>
+<li><em>Divine Command Theory:</em> Cannot be verified; different
+religious texts conflict; provides no mechanism for rational debate</li>
+<li><em>Ethical Egoism:</em> Leads to social conflict and cannot
+generate cooperative rules; if everyone acts only in self-interest,
+society breaks down</li>
+</ul>
+<p><strong>A9. Principle of Utility</strong> The Principle of Utility
+states that we should act so as to produce the greatest good
+(happiness/benefit) for the greatest number of people affected by the
+action. It is the foundation of Utilitarian ethics.</p>
+<p><strong>A10. Consequentialism</strong> Consequentialism means that
+the moral value of an action is determined entirely by its
+<em>outcomes</em> or <em>consequences</em> — not by the intention behind
+it, or by a rule or duty. Act Utilitarianism is consequentialist because
+it judges each individual act solely by whether it produces more benefit
+than harm.</p>
+<p><strong>A11. Good / Bad Actions in Act Utilitarianism</strong></p>
+<ul>
+<li>An action is <strong>good</strong> if it produces more
+happiness/benefit than harm across all affected parties</li>
+<li>An action is <strong>bad</strong> if it produces more harm than
+benefit, i.e. if an alternative action would have produced greater net
+benefit</li>
+</ul>
+<p><strong>A12. Act vs. Rule Utilitarianism</strong></p>
+<ul>
+<li><strong>Act Utilitarianism:</strong> Evaluate each <em>individual
+act</em> case by case — choose the act that maximizes utility in this
+specific situation</li>
+<li><strong>Rule Utilitarianism:</strong> Follow <em>general rules</em>
+that, if widely adopted, tend to maximize utility overall. You don't
+re-calculate for every situation; you follow the rule that generally
+produces the best outcomes</li>
+<li>Key distinction: Rule Utilitarianism is more consistent and
+predictable; Act Utilitarianism is more flexible but can justify harmful
+individual acts if the numbers work out</li>
+</ul>
+<hr />
+<h3 id="part-b--answer-key-model-answers">Part B – Answer Key (Model
+Answers)</h3>
+<p><strong>A13. AI Chatbot Scenario</strong></p>
+<p><em>Using Act Utilitarianism:</em> The core principle is the
+Principle of Utility — the right action produces the greatest benefit
+for the greatest number.</p>
+<p>Stakeholders: you, your manager, clients, the company.</p>
+<p>Benefits of using AI secretly: faster resolutions, better performance
+metrics, more time for development work. Harms: clients may receive
+lower-quality responses; your manager is deceived; if discovered, trust
+is broken; company reputation may suffer.</p>
+<p>Conclusion using Act Util: <em>Probably no</em> — the deception
+introduces risks (discovery, trust breakdown, client harm) that likely
+outweigh short-term efficiency gains. However, if you <em>disclosed</em>
+AI use to your manager, the analysis changes — benefits may then
+outweigh harms.</p>
+<p>Weakness of Act Utilitarianism: it can justify deception whenever the
+numbers favour it, which feels uncomfortable — this is why Rule
+Utilitarianism or Kantianism might be more appropriate here (a rule like
+"always disclose AI use" produces better outcomes generally, even if the
+individual calculation might sometimes favour hiding it).</p>
+<hr />
+<p><strong>A14. Highway Routing Scenario</strong></p>
+<p><em>Act Utilitarian Analysis:</em> Costs: $20M (homeowner
+compensation) + $10M (construction) + $1M (wildlife habitat) = $31M
+Benefits: $39M (savings in automobile driving costs) Net benefit: $8M —
+benefits exceed costs → building the highway is the right action.</p>
+<p><em>Two missing elements from the analysis:</em></p>
+<ol type="1">
+<li>Non-monetary harms to the 150 displaced families (emotional
+distress, community disruption, loss of home) are not captured in the
+$20M compensation figure</li>
+<li>Long-term environmental harms beyond the initial $1M estimate
+(ecosystem damage, species loss, climate impact) are likely undervalued
+<em>(Other valid answers: future maintenance costs, quality-of-life
+impacts, distribution of benefits vs. who bears the costs)</em></li>
+</ol>
+<p><em>Kantian Comparison:</em> A Kantian analysis would likely reach a
+<em>different</em> conclusion. The Categorical Imperative asks: could we
+universalize the principle "governments may demolish people's homes when
+it produces net economic benefit"? Most would say no — this treats
+homeowners purely as means to an end (economic efficiency), not as ends
+in themselves. Kant would likely say the project is impermissible
+regardless of the cost-benefit outcome.</p>
+<hr />
+<p><strong>A15. Comparing Two Unworkable Theories</strong></p>
+<p><em>Example: Subjective Relativism vs. Ethical Egoism</em></p>
+<p><strong>Subjective Relativism:</strong></p>
+<ul>
+<li>Core claim: Each person determines what is right for themselves</li>
+<li>Case for: Respects individual autonomy; avoids cultural
+imperialism</li>
+<li>Why it fails: Makes moral disagreement impossible and provides no
+grounds for criticizing any behaviour — a serial killer would be "right"
+by their own standards</li>
+</ul>
+<p><strong>Ethical Egoism:</strong></p>
+<ul>
+<li>Core claim: The morally right action is whatever serves your
+long-term self-interest</li>
+<li>Case for: Aligns with rational self-preservation; encourages
+productivity and personal responsibility</li>
+<li>Why it fails: In a society of ethical egoists, cooperation breaks
+down; it cannot generate shared moral rules or resolve conflicts between
+competing self-interests</li>
+</ul>
+<hr />
+<h3 id="part-c--case-study-answer-key">Part C – Case Study Answer
+Key</h3>
+<p><strong>A16. Trolley Problem / Autonomous Vehicle</strong></p>
+<p><strong>a) Stakeholders:</strong></p>
+<ul>
+<li>The 3 pedestrians who crossed illegally</li>
+<li>The 1 pedestrian on the sidewalk</li>
+<li>Passengers in the AV</li>
+<li>The AV manufacturer</li>
+<li>Regulators and the public (who must live with whatever rule is
+programmed)</li>
+<li>Future pedestrians and drivers affected by the policy</li>
+</ul>
+<p><strong>b) Act Utilitarian Analysis:</strong> Maximize total welfare
+across all parties.</p>
+<ul>
+<li>Option A: 3 people harmed</li>
+<li>Option B: 1 person harmed</li>
+</ul>
+<p>Applying the Principle of Utility: Option B (swerve, harm 1) produces
+less total harm → the AV should be programmed to swerve. Note: a pure
+Act Utilitarian would say this regardless of fault or innocence — only
+the numbers matter.</p>
+<p><strong>c) Kantian Analysis:</strong> Kant's Categorical Imperative:
+act only according to principles you could universalize, and never treat
+persons merely as means.</p>
+<p>Option B deliberately directs the car toward an innocent bystander,
+using that person as a means to save three others. A Kantian would
+likely say this is <em>impermissible</em> — you cannot intentionally
+harm an innocent person, even to save more lives. This is similar to the
+classic "fat man" variant of the trolley problem.</p>
+<p>Conclusion: Kantianism may lead to Option A (do not swerve) —
+accepting the harm that results from inaction is different from
+<em>causing</em> harm to an innocent person deliberately.</p>
+<p><strong>d) What this reveals about ethical theories:</strong> No
+single theory produces a universally satisfying answer. Utilitarianism
+can endorse harming innocents when the numbers justify it; Kantianism
+can seem rigid when the stakes are life and death. This is exactly why
+IT professionals need to understand multiple ethical frameworks — real
+decisions (like programming AV behaviour) involve competing values that
+no single theory can resolve perfectly.</p>
+<hr />
+<h2 id="chapter-reading-guide">Chapter Reading Guide</h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Quinn Chapter</th>
+<th>Key Sections to Focus On</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Society, Morality, Ethics</td>
+<td>Ch. 1</td>
+<td>1.1 Introduction, 1.5 Contemporary IT Issues</td>
+</tr>
+<tr>
+<td>Defining Terms</td>
+<td>Ch. 2</td>
+<td>2.1.1 Defining Terms</td>
+</tr>
+<tr>
+<td>Unworkable Theories</td>
+<td>Ch. 2</td>
+<td>2.2 Subjective Relativism, 2.3 Cultural Relativism, 2.4 Divine
+Command, 2.5 Ethical Egoism</td>
+</tr>
+<tr>
+<td>Workable Theories</td>
+<td>Ch. 2</td>
+<td>2.6 Kantianism, 2.7 Act Utilitarianism, 2.8 Rule Utilitarianism, 2.9
+Social Contract, 2.10 Virtue Ethics</td>
+</tr>
+<tr>
+<td>Comparing Theories</td>
+<td>Ch. 2</td>
+<td>2.11 Comparing Workable Ethical Theories</td>
+</tr>
+<tr>
+<td>Professional Ethics</td>
+<td>Ch. 9</td>
+<td>9.2 How Well Developed, 9.3 Software Engineering Code of Ethics</td>
+</tr>
+<tr>
+<td>Intellectual Property</td>
+<td>Ch. 4</td>
+<td>4.2 IP Rights, 4.3 Protecting IP, 4.9 Open Source</td>
+</tr>
+<tr>
+<td>Automation &amp; AI</td>
+<td>Ch. 10</td>
+<td>10.2 Automation and Employment, 10.3 Breakthroughs in AI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="active-recall-flashcards">Active Recall Flashcards</h2>
+<p><em>Cover the right column, answer from memory, then check.</em></p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trevor's exact definition of a workable ethical theory?</td>
+<td>"Examine moral problems, reach conclusions logically, and defend
+those conclusions in front of a skeptical, yet open-minded
+audience."</td>
+</tr>
+<tr>
+<td>What is society?</td>
+<td>An association of people organized under a system of rules designed
+to advance the good of its members over time</td>
+</tr>
+<tr>
+<td>What is morality?</td>
+<td>A society's rules of conduct — what people ought and ought not to
+do</td>
+</tr>
+<tr>
+<td>What is ethics?</td>
+<td>The philosophical study of morality; rational examination of moral
+beliefs and behavior</td>
+</tr>
+<tr>
+<td>Why is subjective relativism unworkable?</td>
+<td>Makes moral disagreement impossible; no basis to say anyone is
+wrong</td>
+</tr>
+<tr>
+<td>Why is cultural relativism unworkable?</td>
+<td>Cannot critique other cultures; no universal standard</td>
+</tr>
+<tr>
+<td>Why is divine command theory unworkable?</td>
+<td>Cannot be verified; sources conflict; no mechanism for rational
+debate</td>
+</tr>
+<tr>
+<td>Why is ethical egoism unworkable?</td>
+<td>Destroys social cooperation; cannot resolve conflicts between
+self-interests</td>
+</tr>
+<tr>
+<td>What is the Principle of Utility?</td>
+<td>Act to produce the greatest good for the greatest number</td>
+</tr>
+<tr>
+<td>What is consequentialism?</td>
+<td>Judging actions solely by their outcomes/consequences</td>
+</tr>
+<tr>
+<td>Act vs. Rule Utilitarianism key difference?</td>
+<td>Act = evaluate each situation; Rule = follow rules that generally
+maximize utility</td>
+</tr>
+<tr>
+<td>Kant's Categorical Imperative (basic version)?</td>
+<td>Act only on principles you could universalize for everyone</td>
+</tr>
+<tr>
+<td>Law / Ethics / Policies relationship?</td>
+<td>They overlap — an action can be legal but unethical, or required by
+policy but ethically wrong</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="still-need-weeks-36-slides">Still Need Weeks 3–6 Slides!</h2>
+<p>The following topics are in the study guide but need slide content to
+confirm exact wording and case studies Trevor used:</p>
+<ul>
+<li><strong>Week 3</strong> – Workable ethical theories (Kantianism,
+Social Contract, Virtue Ethics) — confirm how Trevor presented
+Categorical Imperative</li>
+<li><strong>Week 4</strong> – Professional ethics, ACM Code, 8
+attributes of a mature profession</li>
+<li><strong>Week 5</strong> – Intellectual Property, Traditional
+Knowledge</li>
+<li><strong>Week 6</strong> – Automation/Globalization debate,
+Utilitarian analysis structure</li>
+</ul>
+<p>Send them when ready and I'll add Part 3!</p>
+</body>
+</html>

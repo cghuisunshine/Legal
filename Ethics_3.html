@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Ethics_3</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+    body {
+      max-width: 920px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+      line-height: 1.65;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      background: #ffffff;
+    }
+    h1, h2, h3, h4, h5, h6 { line-height: 1.25; }
+    hr { border: 0; border-top: 1px solid #c7c7c7; margin: 2rem 0; }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+      display: block;
+      overflow-x: auto;
+    }
+    th, td {
+      border: 1px solid #b8b8b8;
+      padding: 0.5rem 0.65rem;
+      vertical-align: top;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: #f2f2f2;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+    pre code {
+      display: block;
+      padding: 1rem;
+      overflow: auto;
+    }
+    blockquote {
+      margin: 1rem 0;
+      padding: 0.3rem 1rem;
+      border-left: 4px solid #8a8a8a;
+      color: #444;
+      background: #fafafa;
+    }
+    img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+<h1 id="acit-4770--midterm-study-guide-part-3">ACIT 4770 – Midterm Study
+Guide Part 3</h1>
+<h2 id="professional-ethics--intellectual-property">Professional Ethics
+&amp; Intellectual Property</h2>
+<p><strong>Continuation from Part 2</strong> — Covers Weeks 4–5 slide
+content</p>
+<hr />
+<h2 id="part-a--additional-definitions">PART A – Additional
+Definitions</h2>
+<hr />
+<p><strong>Q17.</strong> What are the <em>Eight Attributes of a "Mature"
+Profession</em>? Which are required for IT?</p>
+<p><strong>Q18.</strong> What is a <em>Trade Secret</em>? How long does
+protection last?</p>
+<p><strong>Q19.</strong> What is a <em>Trademark</em>? How long does
+protection last in Canada?</p>
+<p><strong>Q20.</strong> What is <em>Copyright</em>? How long does
+protection last in Canada?</p>
+<p><strong>Q21.</strong> What is a <em>Patent</em>? How long does
+protection last?</p>
+<p><strong>Q22.</strong> What is <em>Open Source</em>?</p>
+<p><strong>Q23.</strong> What is <em>Traditional Knowledge (TK)</em> and
+why is it problematic under standard IP law?</p>
+<hr />
+<h2 id="part-b--additional-longer-questions">PART B – Additional Longer
+Questions</h2>
+<hr />
+<p><strong>Q24.</strong> A software developer discovers a data breach at
+their company where unencrypted customer data was exposed. Using the
+<strong>ACM Code of Ethics</strong>, analyze what professional
+obligations apply to this situation.</p>
+<p>In your response:</p>
+<ul>
+<li>Identify at least two relevant principles from the ACM Code</li>
+<li>Explain how each applies to the scenario</li>
+<li>Reach a conclusion about what the developer should do</li>
+</ul>
+<hr />
+<p><strong>Q25.</strong> Compare how <strong>Traditional Knowledge
+(TK)</strong> is treated under Indigenous Customary Law versus the
+standard Canadian Intellectual Property Rights (IPR) system. Why does
+the "public domain" concept create problems for Indigenous Peoples?</p>
+<hr />
+<p><strong>Q26.</strong> A company wants to use an image derived from
+Indigenous petroglyphs for their business logo. Using the Snuneymuxw
+trademark case as a reference, explain:</p>
+<ul>
+<li>Why this might be problematic</li>
+<li>What legal protections exist</li>
+<li>What ethical considerations apply beyond the legal requirements</li>
+</ul>
+<hr />
+<h2 id="answer-key--part-3">ANSWER KEY – Part 3</h2>
+<hr />
+<h3 id="part-a--additional-definitions-answer-key">Part A – Additional
+Definitions Answer Key</h3>
+<p><strong>A17. Eight Attributes of a "Mature" Profession</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required for IT?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Education</strong></td>
+<td>No – practical but not a formal requirement</td>
+</tr>
+<tr>
+<td><strong>Accreditation</strong></td>
+<td>No – but BCIT Computing was accredited by CIPS</td>
+</tr>
+<tr>
+<td><strong>Skills Development</strong> (Apprenticeship)</td>
+<td>No – not formally required</td>
+</tr>
+<tr>
+<td><strong>Certification</strong></td>
+<td>No – available but not formally required</td>
+</tr>
+<tr>
+<td><strong>Licensing</strong></td>
+<td>No – not required</td>
+</tr>
+<tr>
+<td><strong>Code of Ethics</strong></td>
+<td>Yes – available but not formally required</td>
+</tr>
+<tr>
+<td><strong>Professional Society</strong></td>
+<td>Optional – CIPS, ACM, IEEE, PMI, etc. – membership is optional</td>
+</tr>
+<tr>
+<td><strong>Professional Development</strong></td>
+<td>Yes – mandatory but not formally tracked</td>
+</tr>
+</tbody>
+</table>
+<p>Key point: IT is <strong>not</strong> considered a "mature" or
+"formal" profession like engineering, medicine, or law. However,
+standards and expectations of professional conduct still apply.</p>
+<hr />
+<p><strong>A18. Trade Secret</strong></p>
+<p>A trade secret is confidential business information that provides a
+competitive advantage.</p>
+<ul>
+<li><strong>Is it clear what's protected?</strong> No – because it's a
+secret</li>
+<li><strong>Do you have to apply?</strong> No – but you must keep it
+secret</li>
+<li><strong>How long does protection last?</strong>
+<strong>Permanent</strong> – as long as it remains secret</li>
+</ul>
+<p>Example: The Google PageRank algorithm (current protection)</p>
+<hr />
+<p><strong>A19. Trademark</strong></p>
+<p>A trademark is a sign, symbol, word, or phrase that identifies and
+distinguishes goods or services.</p>
+<ul>
+<li><strong>Is it clear what's protected?</strong> Yes – especially if
+registered</li>
+<li><strong>Do you have to apply?</strong> No – but registration aids
+protection</li>
+<li><strong>How long does protection last?</strong> <strong>10 years,
+renewable</strong> in Canada</li>
+</ul>
+<p>Examples: The name "BCIT," the McDonald's jingle, company logos</p>
+<hr />
+<p><strong>A20. Copyright</strong></p>
+<p>Copyright protects original literary, artistic, musical, and dramatic
+works.</p>
+<ul>
+<li><strong>Is it clear what's protected?</strong> Yes – especially if
+registered</li>
+<li><strong>Do you have to apply?</strong> No – but registration aids
+protection</li>
+<li><strong>How long does protection last?</strong> <strong>Lifetime of
+the author + 70 years</strong> after death</li>
+</ul>
+<p>Examples: A screenplay, music, software code, books</p>
+<hr />
+<p><strong>A21. Patent</strong></p>
+<p>A patent protects inventions and grants the holder exclusive rights
+to make, use, or sell the invention.</p>
+<ul>
+<li><strong>Is it clear what's protected?</strong> Yes – the patent is
+open and documented</li>
+<li><strong>Do you have to apply?</strong> <strong>Yes</strong> –
+application is required</li>
+<li><strong>How long does protection last?</strong> <strong>Up to 20
+years, not renewable</strong></li>
+</ul>
+<p>Examples: Ozempic (pharmaceutical), documented inventions on
+CIPO/USPTO websites</p>
+<hr />
+<p><strong>A22. Open Source</strong></p>
+<p>Open source refers to software or content that can be freely copied,
+reproduced, altered, and distributed by anyone.</p>
+<ul>
+<li><strong>Is it clear what's protected?</strong> Yes – but it's
+intentionally free to use</li>
+<li><strong>Do you have to apply?</strong> No</li>
+<li><strong>Protection duration:</strong> Not applicable – designed for
+open access</li>
+</ul>
+<p>Example: The Linux operating system</p>
+<hr />
+<p><strong>A23. Traditional Knowledge (TK) and IP Law
+Problems</strong></p>
+<p><strong>Traditional Knowledge (TK)</strong> refers to the knowledge,
+innovations, and practices of Indigenous peoples, developed and
+maintained over generations.</p>
+<p><strong>Why it's problematic under standard IP law:</strong></p>
+<ol type="1">
+<li><strong>Collective ownership not recognized:</strong> TK is owned
+collectively by Indigenous Nations, but the IPR system does not
+acknowledge collective ownership</li>
+<li><strong>Public domain problem:</strong> Under IPR, knowledge not
+"protected" is in the public domain. Since Indigenous Peoples have not
+used IPR to protect their knowledge, TK is often treated as public
+domain without regard for Customary Law</li>
+<li><strong>Authorship problem:</strong> A person who "writes down" TK
+or Oral Traditions is not their author – the copyright should belong to
+the Indigenous People, not the person who recorded it</li>
+<li><strong>Perpetual protection:</strong> Customary Law dictates that
+certain TK is <strong>never</strong> intended for external access, but
+IPR assumes all IP will eventually enter the public domain</li>
+</ol>
+<p>Quote from slides: <em>"Native culture was thought to be free for the
+taking, the product of many and so the preserve of none – except when
+transformed by the mediation of Europeans, whereupon it magically gained
+cultural legitimacy."</em></p>
+<hr />
+<h3 id="part-b--additional-longer-questions-answer-key">Part B –
+Additional Longer Questions Answer Key</h3>
+<p><strong>A24. Data Breach and ACM Code of Ethics</strong></p>
+<p>The ACM Code of Ethics provides guidance for computing professionals.
+Relevant principles include:</p>
+<ol type="1">
+<li><p><strong>Principle 1.2: Avoid harm</strong> – Computing
+professionals should avoid causing harm to others. Failing to report or
+address a data breach causes harm to customers whose data is
+exposed.</p></li>
+<li><p><strong>Principle 1.6: Respect privacy</strong> – Professionals
+have an obligation to protect personal information. An unencrypted data
+breach violates this principle.</p></li>
+<li><p><strong>Principle 2.5: Give comprehensive evaluations</strong> –
+Professionals should provide honest assessments of system capabilities,
+limitations, and risks.</p></li>
+<li><p><strong>Principle 3.7: Recognize responsibility to
+report</strong> – If a professional believes a system poses risks to
+stakeholders, they have an obligation to report concerns.</p></li>
+</ol>
+<p><strong>Conclusion:</strong> The developer should:</p>
+<ul>
+<li>Report the breach through appropriate channels</li>
+<li>Advocate for notifying affected customers</li>
+<li>Work to remediate the vulnerability</li>
+<li>Document the incident for future prevention</li>
+</ul>
+<p>The ACM Code applies not just to ACM members but serves as a general
+standard for computing professionals.</p>
+<hr />
+<p><strong>A25. Traditional Knowledge vs. Standard IPR</strong></p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Canadian IPR System</th>
+<th>Indigenous Customary Law</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ownership</strong></td>
+<td>Individual or corporate</td>
+<td>Collective (belonging to Indigenous Nations)</td>
+</tr>
+<tr>
+<td><strong>Registration</strong></td>
+<td>Required for full protection</td>
+<td>No registration – protection through tradition</td>
+</tr>
+<tr>
+<td><strong>Duration</strong></td>
+<td>Limited terms (20 years for patents, life + 70 for copyright)</td>
+<td>Perpetual – some knowledge never meant for external access</td>
+</tr>
+<tr>
+<td><strong>Public domain</strong></td>
+<td>All IP eventually enters public domain</td>
+<td>Some TK must remain restricted permanently</td>
+</tr>
+<tr>
+<td><strong>Authorship</strong></td>
+<td>Person who creates/writes owns</td>
+<td>Community owns regardless of who records it</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The "Public Domain Problem":</strong></p>
+<p>Under IPR, knowledge that isn't formally protected is considered
+public domain – free for anyone to use. This creates two major
+problems:</p>
+<ol type="1">
+<li>Since Indigenous Peoples historically did not use IPR mechanisms,
+their TK is often treated as public domain by outsiders</li>
+<li>The IPR assumption that all IP <em>should</em> eventually enter
+public domain conflicts with Customary Law, which dictates that certain
+sacred or sensitive knowledge must <strong>never</strong> be shared
+externally</li>
+</ol>
+<p>This has led to widespread misappropriation, with thousands of
+patents on TK licensed to corporations and individuals worldwide.</p>
+<hr />
+<p><strong>A26. Indigenous Petroglyphs and Trademark
+Protection</strong></p>
+<p><strong>The Snuneymuxw Case:</strong></p>
+<ul>
+<li>Snuneymuxw People have ancient petroglyphs near False Narrows on
+Gabriola Island, BC</li>
+<li>In the early 1990s, non-Indigenous businesses began using petroglyph
+images in logos</li>
+<li>In 1998, the Snuneymuxw Band was awarded a <strong>Section 9(1)(n)
+Public Authority Trademark</strong> for eight petroglyphs</li>
+<li>This protects the images from <strong>all uses</strong> by
+non-Snuneymuxw people</li>
+<li>Businesses using the images were forced to stop</li>
+</ul>
+<p><strong>Why using Indigenous imagery is problematic:</strong></p>
+<ol type="1">
+<li><strong>Legal:</strong> Without permission, using protected
+Indigenous symbols may violate trademark law</li>
+<li><strong>Ethical:</strong> Even without formal legal protection,
+using cultural symbols without consent treats Indigenous culture as
+"free for the taking"</li>
+<li><strong>Harm:</strong> Commercial use of sacred or culturally
+significant images can cause harm to Indigenous communities, violating
+utilitarian principles</li>
+<li><strong>Respect for autonomy:</strong> Kantian ethics would require
+treating Indigenous Peoples as ends in themselves – respecting their
+right to control their cultural property</li>
+</ol>
+<p><strong>Conclusion:</strong> Beyond legal requirements, ethical
+considerations demand seeking consent and understanding the cultural
+significance of Indigenous symbols before any commercial or public
+use.</p>
+<hr />
+<h2 id="types-of-ip--quick-reference-table">Types of IP – Quick
+Reference Table</h2>
+<table>
+<thead>
+<tr>
+<th>IP Type</th>
+<th>Clear what's protected?</th>
+<th>Must apply?</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Trade Secret</strong></td>
+<td>No (it's secret)</td>
+<td>No, but keep it secret</td>
+<td>Permanent (while secret)</td>
+</tr>
+<tr>
+<td><strong>Trademark</strong></td>
+<td>Yes (if registered)</td>
+<td>No, but registration helps</td>
+<td>10 years, renewable (Canada)</td>
+</tr>
+<tr>
+<td><strong>Copyright</strong></td>
+<td>Yes (if registered)</td>
+<td>No, but registration helps</td>
+<td>Life + 70 years</td>
+</tr>
+<tr>
+<td><strong>Patent</strong></td>
+<td>Yes (documented publicly)</td>
+<td><strong>Yes</strong></td>
+<td>Up to 20 years, not renewable</td>
+</tr>
+<tr>
+<td><strong>Open Source</strong></td>
+<td>Yes</td>
+<td>No</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ip-classification-practice">IP Classification Practice</h2>
+<p><em>What type of IP protects each of the following?</em></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>IP Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The name "BCIT"</td>
+<td>Trademark</td>
+</tr>
+<tr>
+<td>Google PageRank algorithm (current protection)</td>
+<td>Trade Secret</td>
+</tr>
+<tr>
+<td>An invention documented on CIPO/USPTO</td>
+<td>Patent</td>
+</tr>
+<tr>
+<td>The McDonald's jingle</td>
+<td>Copyright (and possibly Trademark)</td>
+</tr>
+<tr>
+<td>The Linux OS</td>
+<td>Open Source</td>
+</tr>
+<tr>
+<td>Ozempic</td>
+<td>Patent</td>
+</tr>
+<tr>
+<td>Script you write at work "on the clock"</td>
+<td>Copyright (owned by employer)</td>
+</tr>
+<tr>
+<td>Script you write on your own time</td>
+<td>Copyright (owned by you)</td>
+</tr>
+<tr>
+<td>Your instructor's blockbuster screenplay</td>
+<td>Copyright</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="additional-active-recall-flashcards">Additional Active Recall
+Flashcards</h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Is IT a "mature" profession?</td>
+<td>No – it lacks formal requirements for licensing, certification,
+etc.</td>
+</tr>
+<tr>
+<td>How many attributes define a mature profession?</td>
+<td>Eight</td>
+</tr>
+<tr>
+<td>Which IP type requires an application?</td>
+<td>Patent</td>
+</tr>
+<tr>
+<td>How long does copyright last in Canada?</td>
+<td>Life of author + 70 years</td>
+</tr>
+<tr>
+<td>How long does a patent last?</td>
+<td>Up to 20 years, not renewable</td>
+</tr>
+<tr>
+<td>How long does a trademark last in Canada?</td>
+<td>10 years, renewable</td>
+</tr>
+<tr>
+<td>What makes a trade secret's protection last?</td>
+<td>Keeping it secret</td>
+</tr>
+<tr>
+<td>What is TK?</td>
+<td>Traditional Knowledge – knowledge and practices of Indigenous
+peoples</td>
+</tr>
+<tr>
+<td>Why is TK often treated as public domain?</td>
+<td>Indigenous Peoples didn't use IPR to protect it</td>
+</tr>
+<tr>
+<td>Who owns TK according to Customary Law?</td>
+<td>The Indigenous community collectively</td>
+</tr>
+<tr>
+<td>What happened in the Snuneymuxw trademark case?</td>
+<td>They obtained trademark protection for petroglyphs, forcing
+businesses to stop using the images</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="professional-codes-reference">Professional Codes Reference</h2>
+<p><strong>ACM Code of Ethics</strong> – Applies to computing
+professionals generally (not just ACM members)</p>
+<ul>
+<li>Key areas: Avoid harm, respect privacy, be honest, maintain
+competence</li>
+<li>Use for analyzing professional conduct scenarios</li>
+</ul>
+<p><strong>Google Code of Conduct</strong> – Corporate code example</p>
+<ul>
+<li>Historically included "Don't be evil" (check current version)</li>
+<li>Applies to Google employees specifically</li>
+</ul>
+<p><strong>Key difference:</strong> Professional codes (ACM) set
+industry-wide standards; corporate codes apply to specific company
+employees.</p>
+<hr />
+<h2 id="study-notes--week-6-still-needed">Study Notes – Week 6 Still
+Needed</h2>
+<p>The following topics may appear on the exam but require Week 6 slides
+to confirm:</p>
+<ul>
+<li><strong>Automation and Globalization Debate</strong> – specific
+arguments for/against</li>
+<li><strong>Quinn Chapter 10 content</strong> – Automation and
+Employment, AI Breakthroughs</li>
+<li><strong>Utilitarian analysis structure for debate
+topics</strong></li>
+</ul>
+<hr />
+<h2 id="exam-preparation-checklist">Exam Preparation Checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />Can define all key terms (society,
+morality, ethics, workable theory)</label></li>
+<li><label><input type="checkbox" />Can explain why subjective
+relativism, cultural relativism, divine command, and ethical egoism are
+unworkable</label></li>
+<li><label><input type="checkbox" />Can apply Act Utilitarianism to a
+scenario</label></li>
+<li><label><input type="checkbox" />Can apply Kantianism to a
+scenario</label></li>
+<li><label><input type="checkbox" />Can identify the 8 attributes of a
+mature profession</label></li>
+<li><label><input type="checkbox" />Can classify IP types (trade secret,
+trademark, copyright, patent, open source)</label></li>
+<li><label><input type="checkbox" />Can explain why TK is problematic
+under standard IPR</label></li>
+<li><label><input type="checkbox" />Can apply ACM Code of Ethics to
+professional scenarios</label></li>
+<li><label><input type="checkbox" />Can discuss highway routing scenario
+using utilitarian analysis</label></li>
+<li><label><input type="checkbox" />Can analyze AI chatbot case study
+using ethical frameworks</label></li>
+</ul>
+</body>
+</html>

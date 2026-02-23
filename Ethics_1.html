@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Ethics_1</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+    body {
+      max-width: 920px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+      line-height: 1.65;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      background: #ffffff;
+    }
+    h1, h2, h3, h4, h5, h6 { line-height: 1.25; }
+    hr { border: 0; border-top: 1px solid #c7c7c7; margin: 2rem 0; }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+      display: block;
+      overflow-x: auto;
+    }
+    th, td {
+      border: 1px solid #b8b8b8;
+      padding: 0.5rem 0.65rem;
+      vertical-align: top;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: #f2f2f2;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+    pre code {
+      display: block;
+      padding: 1rem;
+      overflow: auto;
+    }
+    blockquote {
+      margin: 1rem 0;
+      padding: 0.3rem 1rem;
+      border-left: 4px solid #8a8a8a;
+      color: #444;
+      background: #fafafa;
+    }
+    img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+<h1 id="acit-4770--midterm-study-guide">ACIT 4770 – Midterm Study
+Guide</h1>
+<p><strong>Exam:</strong> Thursday, February 26, 2026 | 10:30 AM – 12:30
+PM | In-person, handwritten<br />
+<strong>Book:</strong> <em>Ethics for the Information Age</em> – Michael
+J. Quinn<br />
+<strong>Format:</strong> Definition questions + a couple of longer
+questions (with choice) + one short case study</p>
+<hr />
+<h2 id="week-1--impact-of-technology-on-society">Week 1 – Impact of
+Technology on Society</h2>
+<p>📖 <em>Quinn Ch. 1 – Catalysts for Change</em></p>
+<h3 id="key-terms-to-know">Key Terms to Know</h3>
+<ul>
+<li><strong>Society</strong> – What is it? How does technology change
+it?</li>
+<li><strong>Morality</strong> – The set of rules/norms a society uses to
+guide behaviour</li>
+<li><strong>Ethics</strong> – The philosophical study of morality; a
+rational examination of standards of right and wrong</li>
+</ul>
+<h3 id="study-questions">Study Questions</h3>
+<ul>
+<li>What is the difference between <em>morality</em> and
+<em>ethics</em>?</li>
+<li>How have computing and networking milestones (e.g. ARPANET, WWW,
+microprocessor) changed society?</li>
+<li>What are some <strong>contemporary IT issues</strong> raised by
+Quinn (Ch. 1.5)?</li>
+</ul>
+<hr />
+<h2 id="weeks-2--3--introduction-to-ethics">Weeks 2 &amp; 3 –
+Introduction to Ethics</h2>
+<p>📖 <em>Quinn Ch. 2 – Introduction to Ethics</em></p>
+<h3 id="what-makes-an-ethical-theory-workable">What Makes an Ethical
+Theory "Workable"?</h3>
+<p>A workable theory must:</p>
+<ol type="1">
+<li>Be applicable across different situations</li>
+<li>Produce consistent, justifiable results</li>
+<li>Not contradict widely-held moral intuitions without good reason</li>
+</ol>
+<h3 id="unworkable-ethical-theories-week-2">Unworkable Ethical Theories
+(Week 2)</h3>
+<table>
+<thead>
+<tr>
+<th>Theory</th>
+<th>Core Idea</th>
+<th>Why Unworkable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Subjective Relativism</strong></td>
+<td>Each person decides what's right for themselves</td>
+<td>No basis for moral disagreement or critique</td>
+</tr>
+<tr>
+<td><strong>Cultural Relativism</strong></td>
+<td>What's right is defined by one's culture</td>
+<td>Can't critique other cultures; no universal standard</td>
+</tr>
+<tr>
+<td><strong>Divine Command Theory</strong></td>
+<td>Right = what God commands</td>
+<td>Can't verify commands; moral dilemmas remain</td>
+</tr>
+<tr>
+<td><strong>Ethical Egoism</strong></td>
+<td>Right = what's in my own best interest</td>
+<td>Leads to social conflict; no basis for cooperation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="workable-ethical-theories-week-3">Workable Ethical Theories
+(Week 3)</h3>
+<table>
+<thead>
+<tr>
+<th>Theory</th>
+<th>Core Idea</th>
+<th>Key Concept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kantianism</strong></td>
+<td>Act only on principles you'd will to be universal laws</td>
+<td>Categorical Imperative; duty-based (deontological)</td>
+</tr>
+<tr>
+<td><strong>Act Utilitarianism</strong></td>
+<td>The right act maximizes total happiness/utility</td>
+<td>Principle of Utility; <strong>consequentialist</strong></td>
+</tr>
+<tr>
+<td><strong>Rule Utilitarianism</strong></td>
+<td>Follow rules that, if widely adopted, maximize utility</td>
+<td>Balances consistency with outcomes</td>
+</tr>
+<tr>
+<td><strong>Social Contract Theory</strong></td>
+<td>Morality = rules rational people agree to for mutual benefit</td>
+<td>Rawls' veil of ignorance; justice as fairness</td>
+</tr>
+<tr>
+<td><strong>Virtue Ethics</strong></td>
+<td>Focus on character traits (virtues) rather than acts</td>
+<td>What would a virtuous person do?</td>
+</tr>
+</tbody>
+</table>
+<h3 id="utilitarianism--key-concepts">Utilitarianism – Key Concepts</h3>
+<ul>
+<li><strong>Principle of Utility:</strong> An action is good if it
+produces the greatest good for the greatest number</li>
+<li><strong>Good action:</strong> Produces more happiness/benefit than
+harm overall</li>
+<li><strong>Bad action:</strong> Produces more harm than benefit
+overall</li>
+<li><strong>Consequentialist:</strong> Moral judgement is based on
+<em>outcomes/consequences</em>, not intentions or rules</li>
+</ul>
+<hr />
+<h2 id="week-4--professional-ethics">Week 4 – Professional Ethics</h2>
+<p>📖 <em>Quinn Ch. 9 – Professional Ethics</em></p>
+<h3 id="is-it-a-mature-profession">Is IT a "Mature Profession"?</h3>
+<p>IT is <strong>not</strong> considered a fully mature profession
+(yet). Compare to medicine or law.</p>
+<h3 id="8-attributes-of-a-mature-profession">8 Attributes of a Mature
+Profession</h3>
+<ol type="1">
+<li>Specialized knowledge/skills</li>
+<li>Formal education requirements</li>
+<li>Certification or licensing</li>
+<li>Professional associations</li>
+<li>Code of ethics</li>
+<li>Service orientation (public good)</li>
+<li>Autonomy / self-regulation</li>
+<li>Accountability mechanisms</li>
+</ol>
+<h3 id="even-without-mature-status">Even Without "Mature" Status...</h3>
+<ul>
+<li>There can still be standards and expectations of
+professionalism</li>
+<li>Companies create their own codes (e.g., Google Code of Conduct)</li>
+</ul>
+<h3 id="acm-code-of-ethics">ACM Code of Ethics</h3>
+<ul>
+<li><strong>Purpose:</strong> To guide ethical behaviour for computing
+professionals</li>
+<li><strong>Similarities to Google Code of Conduct:</strong> Public
+interest, honesty, privacy</li>
+<li><strong>Differences:</strong> ACM is universal/profession-wide;
+Google's is company-specific</li>
+</ul>
+<hr />
+<h2 id="week-5--intellectual-property">Week 5 – Intellectual
+Property</h2>
+<p>📖 <em>Quinn Ch. 4 – Intellectual Property</em></p>
+<h3 id="four-types-of-ip">Four Types of IP</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>What it Protects</th>
+<th>Formal Application?</th>
+<th>Duration (Canada)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Trade Secret</strong></td>
+<td>Confidential business info (e.g. formula, process)</td>
+<td>No – must just be kept secret</td>
+<td>As long as it remains secret</td>
+</tr>
+<tr>
+<td><strong>Trademark</strong></td>
+<td>Brand names, logos, symbols</td>
+<td>Yes – must register to get full protection</td>
+<td>Renewable every 10 years (indefinite)</td>
+</tr>
+<tr>
+<td><strong>Copyright</strong></td>
+<td>Original creative works (writing, code, music, art)</td>
+<td>No – automatic upon creation</td>
+<td>Life of author + 70 years</td>
+</tr>
+<tr>
+<td><strong>Patent</strong></td>
+<td>Inventions, novel processes</td>
+<td>Yes – must apply and be granted</td>
+<td>20 years from filing date</td>
+</tr>
+</tbody>
+</table>
+<h3 id="open-source">Open Source</h3>
+<ul>
+<li>Software whose source code is publicly available</li>
+<li>Users can use, modify, and distribute it</li>
+<li>Examples: Linux, Firefox, Android</li>
+</ul>
+<h3 id="traditional-knowledge-tk--ip">Traditional Knowledge (TK) &amp;
+IP</h3>
+<ul>
+<li><strong>Collective ownership</strong> – TK is often held by a
+community, not an individual</li>
+<li><strong>Traditional Knowledge (TK)</strong> – Indigenous knowledge,
+practices, and expressions passed through generations</li>
+<li><strong>Why TK doesn't fit IP categories:</strong>
+<ul>
+<li>Copyright requires a named author (TK is communal and oral)</li>
+<li>Patents require novelty and a filing date (TK predates modern
+systems)</li>
+<li>Trade secrets require active secrecy (TK may be openly shared within
+community)</li>
+</ul></li>
+<li><strong>Key ethical questions:</strong>
+<ul>
+<li>Is something <em>publicly accessible</em> the same as <em>ethically
+free to use</em>? → <strong>No</strong></li>
+<li>Who holds copyright if someone writes down an oral tradition?</li>
+<li>Should "prior art" include Indigenous knowledge even if not formally
+published?</li>
+</ul></li>
+</ul>
+<hr />
+<h2 id="week-6--automation--globalization">Week 6 – Automation &amp;
+Globalization</h2>
+<p>📖 <em>Quinn Ch. 10 – Automation and Globalization</em></p>
+<h3 id="utilitarian-analysis-framework-used-in-the-debate">Utilitarian
+Analysis Framework (used in the debate)</h3>
+<p>Apply the <strong>Principle of Utility</strong> to automation/AI:</p>
+<ol type="1">
+<li>Identify all affected parties</li>
+<li>List harms and benefits for each</li>
+<li>Weigh total harm vs. total benefit</li>
+<li>The ethical choice = the one with the greatest net benefit</li>
+</ol>
+<h3 id="data-centres--ai--case-study-for-exam-prep">Data Centres &amp;
+AI – Case Study for Exam Prep</h3>
+<p><strong>Issue:</strong> Data centres (especially those running LLMs)
+produce significant GHG emissions.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Who benefits?</strong></td>
+<td>Tech companies, consumers using AI/cloud services, researchers,
+businesses</td>
+</tr>
+<tr>
+<td><strong>Who is harmed?</strong></td>
+<td>Communities near data centres (pollution, water use), future
+generations (climate change), people in regions most affected by climate
+change</td>
+</tr>
+<tr>
+<td><strong>Utilitarian verdict</strong></td>
+<td>Depends on whether benefits (e.g. medical AI, productivity) outweigh
+environmental harms — context matters</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="exam-tips">Exam Tips</h2>
+<ul>
+<li><strong>Definition questions:</strong> Be precise. Use course
+terminology. Don't confuse morality vs. ethics, or act vs. rule
+utilitarianism.</li>
+<li><strong>Longer questions:</strong> Structure your answer — state the
+theory, apply it to the scenario, draw a conclusion.</li>
+<li><strong>Case study:</strong> Identify the stakeholders, apply a
+workable ethical theory (Kantianism, Utilitarianism, or Social
+Contract), and justify your position.</li>
+<li><strong>You will have some choice</strong> on the longer questions —
+pick the theory you know best!</li>
+</ul>
+<hr />
+<h2 id="quick-flashcard-reference">Quick Flashcard Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ethics</td>
+<td>Rational study of morality</td>
+</tr>
+<tr>
+<td>Morality</td>
+<td>Society's shared norms for right/wrong</td>
+</tr>
+<tr>
+<td>Categorical Imperative</td>
+<td>Act only by principles you'd universalize (Kant)</td>
+</tr>
+<tr>
+<td>Principle of Utility</td>
+<td>Greatest good for greatest number</td>
+</tr>
+<tr>
+<td>Consequentialism</td>
+<td>Moral judgement based on outcomes</td>
+</tr>
+<tr>
+<td>Mature Profession</td>
+<td>One with licensing, code of ethics, self-regulation, etc.</td>
+</tr>
+<tr>
+<td>Copyright</td>
+<td>Auto protection for creative works</td>
+</tr>
+<tr>
+<td>Patent</td>
+<td>Granted protection for inventions (20 yrs)</td>
+</tr>
+<tr>
+<td>Trade Secret</td>
+<td>Confidential info kept private (no expiry)</td>
+</tr>
+<tr>
+<td>Trademark</td>
+<td>Registered brand identifiers (renewable)</td>
+</tr>
+<tr>
+<td>Traditional Knowledge</td>
+<td>Indigenous communal knowledge and practices</td>
+</tr>
+<tr>
+<td>Open Source</td>
+<td>Publicly available, modifiable software</td>
+</tr>
+<tr>
+<td>Ethical Egoism</td>
+<td>Morality = self-interest (unworkable)</td>
+</tr>
+<tr>
+<td>Cultural Relativism</td>
+<td>Morality defined by culture (unworkable)</td>
+</tr>
+<tr>
+<td>Virtue Ethics</td>
+<td>Focus on character, not rules or outcomes</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
